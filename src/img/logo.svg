@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="74px" height="29px" viewBox="0 0 74 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>App</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-8" transform="translate(-24.000000, -38.000000)">
+            <g id="App" transform="translate(24.000000, 38.000000)">
+                <g id="LOGO">
+                    <rect id="Rectangle-2" stroke="#FC4955" stroke-width="4" fill-rule="nonzero" x="2" y="10" width="17" height="17"></rect>
+                    <rect id="Rectangle-2" stroke="#FC4955" stroke-width="4" fill-rule="nonzero" x="10" y="2" width="17" height="17"></rect>
+                    <text id="nid" font-family="RobotoMono-BoldItalic, Roboto Mono" font-size="20" font-style="italic" font-weight="bold" fill="#FC4955">
+                        <tspan x="39" y="21">nid</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -7,9 +7,14 @@ import { injectGlobal } from 'styled-components'
 
 injectGlobal`
  body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  /* flex-direction: column; */
+  justify-content: center;
+  background: #f7f7f7;
+  font-family: sans-serif; 
+  padding-left: 25px; 
+  padding-right: 25px; 
  }
 `
 
