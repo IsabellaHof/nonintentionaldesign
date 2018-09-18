@@ -6,10 +6,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Route exact path="/" component={ImageScreen} />
-          <Route path="/info" component={ImageScreen} />
-        </div>
+        <Route exact path="/" component={ImageScreen} />
       </Router>
     )
   }
