@@ -1,14 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import nid_1 from '../../img/nid_1.jpg'
-import nid_2 from '../../img/nid_2.jpg'
-import nid_3 from '../../img/nid_3.jpg'
-import nid_4 from '../../img/nid_4.jpg'
-import nid_5 from '../../img/nid_5.jpg'
-import nid_6 from '../../img/nid_6.jpg'
-import nid_7 from '../../img/nid_7.jpg'
-import nid_8 from '../../img/nid_8.jpg'
 import ImageScreenHeader from '../ImageScreenHeader'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const StyledImageContainer = styled.div`
   columns: 2;
@@ -21,19 +15,21 @@ const Image = styled.img`
 `
 
 export default class ImageScreen extends Component {
+  static propTypes = {
+    finds: PropTypes.arrayOf(PropTypes.object),
+  }
   render() {
     return (
       <React.Fragment>
         <ImageScreenHeader />
         <StyledImageContainer>
-          <Image src={nid_1} alt="" />
-          <Image src={nid_2} alt="" />
-          <Image src={nid_3} alt="" />
-          <Image src={nid_4} alt="" />
-          <Image src={nid_5} alt="" />
-          <Image src={nid_6} alt="" />
-          <Image src={nid_7} alt="" />
-          <Image src={nid_8} alt="" />
+          {this.props.finds.map((find, index) => {
+            return (
+              <Link to={'/detail/' + find.id} key={index}>
+                <Image key={index} src={find.image} alt="" />
+              </Link>
+            )
+          })}
         </StyledImageContainer>
       </React.Fragment>
     )

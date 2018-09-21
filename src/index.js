@@ -7,11 +7,11 @@ import { injectGlobal } from 'styled-components'
 
 injectGlobal`
  body {
-  align-items: center;
+  /* align-items: center; */
   background: #f7f7f7;
-  display: flex;
-  font-family: sans-serif; 
-  justify-content: center;
+  /* display: flex; */
+ 
+  /* justify-content: center; */
   padding-left: 25px; 
   padding-right: 25px; 
  }
