@@ -28,8 +28,8 @@ export default class ImageScreen extends Component {
         <StyledImageContainer>
           <Image src={nid_1} alt="" />
           <Image src={nid_2} alt="" />
-          <Image src={nid_4} alt="" />
           <Image src={nid_3} alt="" />
+          <Image src={nid_4} alt="" />
           <Image src={nid_5} alt="" />
           <Image src={nid_6} alt="" />
           <Image src={nid_7} alt="" />
