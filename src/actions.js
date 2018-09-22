@@ -1,9 +1,9 @@
-// import { createAction } from 'redux-actions'
+import { createAction } from 'redux-actions'
 
-// const ACTIONS = {
-//   LOAD_FINDS: 'LOAD_FINDS',
-// }
+const ACTIONS = {
+  IMAGE_SELECTED: 'IMAGE_SELECTED',
+}
 
-// export const loadFinds = createAction(ACTIONS.LOAD_FINDS)
+export const imageSelected = createAction(ACTIONS.IMAGE_SELECTED)
 
-// export default ACTIONS
+export default ACTIONS

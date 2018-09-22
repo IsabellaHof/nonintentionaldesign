@@ -3,6 +3,7 @@ import DetailScreen from '../components/screen/DetailScreen.js'
 
 const mapStateToProps = state => ({
   finds: state.finds,
+  selectedIndex: state.selectedIndex,
 })
 
 // const mapDispatchToProps = dispatch => ({

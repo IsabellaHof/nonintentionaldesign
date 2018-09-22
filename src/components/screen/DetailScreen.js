@@ -30,19 +30,20 @@ const TextDetailStyled = styled.div`
 export default class DetailScreen extends Component {
   static propTypes = {
     finds: PropTypes.arrayOf(PropTypes.object),
+    selectedIndex: PropTypes.func,
   }
 
   render() {
-    const { finds } = this.props
-    const firstFind = finds[0]
+    const { finds, selectedIndex } = this.props
+    const { image, findName, findDescription } = finds[selectedIndex]
     return (
       <React.Fragment>
         <DetailScreenHeader />
         <StyledImageContainer>
-          <Image src={firstFind.image} alt="" />
+          <Image src={image} alt="" />
         </StyledImageContainer>
-        <HeadlineDetailStyled>{firstFind.findName}</HeadlineDetailStyled>
-        <TextDetailStyled>{firstFind.findDescription}</TextDetailStyled>
+        <HeadlineDetailStyled>{findName}</HeadlineDetailStyled>
+        <TextDetailStyled>{findDescription}</TextDetailStyled>
       </React.Fragment>
     )
   }

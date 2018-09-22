@@ -17,16 +17,23 @@ const Image = styled.img`
 export default class ImageScreen extends Component {
   static propTypes = {
     finds: PropTypes.arrayOf(PropTypes.object),
+    onImageClick: PropTypes.func,
   }
   render() {
+    const { onImageClick, finds } = this.props
     return (
       <React.Fragment>
         <ImageScreenHeader />
         <StyledImageContainer>
-          {this.props.finds.map((find, index) => {
+          {finds.map((find, index) => {
             return (
               <Link to={'/detail/' + find.id} key={index}>
-                <Image key={index} src={find.image} alt="" />
+                <Image
+                  key={index}
+                  onClick={() => onImageClick(index)}
+                  src={find.image}
+                  alt=""
+                />
               </Link>
             )
           })}
