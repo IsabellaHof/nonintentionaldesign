@@ -3,7 +3,7 @@ import finds from './data/finds.js'
 
 const initialState = {
   finds: finds,
-  selectedIndex: 4,
+  selectedIndex: null,
 }
 
 export default function reducer(state = initialState, action = {}) {

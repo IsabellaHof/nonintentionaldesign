@@ -6,12 +6,6 @@ const mapStateToProps = state => ({
   selectedIndex: state.selectedIndex,
 })
 
-// const mapDispatchToProps = dispatch => ({
-//   onUpdateScore: (index, value) => dispatch(updateScore({ index, value })),
-//   onSaveRound: () => dispatch(saveRound()),
-//   resetRoundScores: () => dispatch(resetRoundScores()),
-// })
-
 export default connect(
   mapStateToProps,
   null

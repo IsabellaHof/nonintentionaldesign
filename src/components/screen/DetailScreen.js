@@ -4,33 +4,31 @@ import DetailScreenHeader from '../DetailScreenHeader'
 import styled from 'styled-components'
 
 const StyledImageContainer = styled.div`
-  margin-top: -8px;
+  margin-top: 20px;
 `
 const Image = styled.img`
   margin-bottom: 25px;
   height: auto;
   width: 100%;
 `
-
 const HeadlineDetailStyled = styled.div`
+  color: #fc4955;
   font-family: 'Roboto Mono';
-  font-weight: 700;
   font-style: italic;
   font-size: 38px;
-  color: #fc4955;
-`
-
-const TextDetailStyled = styled.div`
-  margin-top: 25px;
-  font-family: 'Loro';
   font-weight: 700;
+`
+const TextDetailStyled = styled.div`
+  font-family: 'Loro';
   font-size: 26px;
+  font-weight: 700;
+  margin-top: 25px;
 `
 
 export default class DetailScreen extends Component {
   static propTypes = {
     finds: PropTypes.arrayOf(PropTypes.object),
-    selectedIndex: PropTypes.func,
+    selectedIndex: PropTypes.number,
   }
 
   render() {
