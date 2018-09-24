@@ -17,7 +17,7 @@ const Image = styled.img`
 export default class ImageScreen extends Component {
   static propTypes = {
     finds: PropTypes.arrayOf(PropTypes.object),
-    onImageClick: PropTypes.func,
+    onImageClick: PropTypes.func.isRequired,
   }
   render() {
     const { onImageClick, finds } = this.props

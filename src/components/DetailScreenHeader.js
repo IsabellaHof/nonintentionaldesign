@@ -22,13 +22,11 @@ export default class DetailScreenHeader extends Component {
   render() {
     return (
       <React.Fragment>
-        <div data-test-id="DetailScreen">
-          <HeaderStyled>
-            <Link to={'/'}>
-              <img src={closeButton} alt="Logo" />
-            </Link>
-          </HeaderStyled>
-        </div>
+        <HeaderStyled>
+          <Link to={'/'}>
+            <img src={closeButton} alt="Logo" />
+          </Link>
+        </HeaderStyled>
       </React.Fragment>
     )
   }
