@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import logo from '../img/logo.svg'
 
 const HeaderStyled = styled.div`
@@ -23,7 +24,9 @@ export default class ImageScreenHeader extends Component {
       <React.Fragment>
         <div data-test-id="ImageScreen">
           <HeaderStyled>
-            <img src={logo} alt="Logo" />
+            <Link to={'/'}>
+              <img src={logo} alt="Logo" />
+            </Link>
           </HeaderStyled>
         </div>
       </React.Fragment>
