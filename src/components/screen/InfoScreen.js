@@ -61,7 +61,8 @@ export default class InfoScreen extends Component {
                 <img src={arrow_right} alt="Arrow points to the right" />
               </Link>
               <ImpressumStyled>
-                <u>Impressum</u>
+                <u>Impressum</u> <br />
+                <u>Datenschutz</u>
               </ImpressumStyled>
             </InfoScreenRunningText>
           </InfoScreenGrid>
