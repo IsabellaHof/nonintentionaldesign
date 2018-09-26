@@ -23,21 +23,23 @@ export default class ImageScreen extends Component {
     const { onImageClick, finds } = this.props
     return (
       <React.Fragment>
-        <ImageScreenHeader />
-        <StyledImageContainer>
-          {finds.map((find, index) => {
-            return (
-              <Link to={'/detail/' + find.id} key={index}>
-                <Image
-                  key={index}
-                  onClick={() => onImageClick(index)}
-                  src={find.image}
-                  alt=""
-                />
-              </Link>
-            )
-          })}
-        </StyledImageContainer>
+        <div data-test-id="ImageScreen">
+          <ImageScreenHeader />
+          <StyledImageContainer>
+            {finds.map((find, index) => {
+              return (
+                <Link to={'/detail/' + find.id} key={index}>
+                  <Image
+                    key={index}
+                    onClick={() => onImageClick(index)}
+                    src={find.image}
+                    alt=""
+                  />
+                </Link>
+              )
+            })}
+          </StyledImageContainer>
+        </div>
       </React.Fragment>
     )
   }

@@ -22,7 +22,7 @@ export default class ImageScreenHeader extends Component {
   render() {
     return (
       <React.Fragment>
-        <div data-test-id="ImageScreen">
+        <div>
           <HeaderStyled>
             <Link to={'/'}>
               <img src={logo} alt="Logo" />

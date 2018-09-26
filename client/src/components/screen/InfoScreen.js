@@ -149,7 +149,7 @@ export default class InfoScreen extends Component {
   render() {
     return (
       <React.Fragment>
-        <InfoScreenContainer>
+        <InfoScreenContainer data-test-id="InfoScreen">
           <InfoScreenImage>
             <img src={logo_big} alt="Big Logo" />
           </InfoScreenImage>
