@@ -28,8 +28,8 @@ const InfoScreenRunningText = styled.div`
   font-family: 'Loro';
   font-size: 38px;
   font-weight: 700;
-  margin-top: 10px;
   margin-bottom: 60px;
+  margin-top: 10px;
 `
 const ImprintStyled = styled.div`
   color: #fc4955;
@@ -150,24 +150,22 @@ export default class InfoScreen extends Component {
     return (
       <React.Fragment>
         <InfoScreenContainer>
-          <div>
-            <InfoScreenImage>
-              <img src={logo_big} alt="Big Logo" />
-            </InfoScreenImage>
-            <InfoScreenHeadline>nid</InfoScreenHeadline>
-            <InfoScreenRunningText>
-              is a social image platform that aims to document and to spread
-              Non-Intentional-Design in everyday life finds wherever it is
-              found.&nbsp;
-              <Link to={'/nids'}>
-                <img src={arrow_right} alt="Arrow points to the right" />
-              </Link>
-            </InfoScreenRunningText>
-            <ImprintStyled>
-              {this.renderShortOrLongImprint()}
-              {this.renderShortOrLongDataProtection()}
-            </ImprintStyled>
-          </div>
+          <InfoScreenImage>
+            <img src={logo_big} alt="Big Logo" />
+          </InfoScreenImage>
+          <InfoScreenHeadline>nid</InfoScreenHeadline>
+          <InfoScreenRunningText>
+            is a social image platform that aims to document and to spread
+            Non-Intentional-Design in everyday life finds wherever it is
+            found.&nbsp;
+            <Link to={'/nids'}>
+              <img src={arrow_right} alt="Arrow points to the right" />
+            </Link>
+          </InfoScreenRunningText>
+          <ImprintStyled>
+            {this.renderShortOrLongImprint()}
+            {this.renderShortOrLongDataProtection()}
+          </ImprintStyled>
         </InfoScreenContainer>
       </React.Fragment>
     )

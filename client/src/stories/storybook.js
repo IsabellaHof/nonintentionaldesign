@@ -9,6 +9,7 @@ import ImageScreen from '../components/screen/ImageScreen.js'
 import DetailScreen from '../components/screen/DetailScreen.js'
 import DetailScreenHeader from '../components/DetailScreenHeader.js'
 import ImageScreenHeader from '../components/ImageScreenHeader.js'
+import InfoScreen from '../components/screen/InfoScreen.js'
 import { BrowserRouter as Router } from 'react-router-dom'
 import nid_1 from '../img/nid_1.jpg'
 import nid_2 from '../img/nid_2.jpg'
@@ -62,3 +63,9 @@ storiesOf('DetailScreen', module)
       />
     </Router>
   ))
+
+storiesOf('InfoScreen', module).add('default', () => (
+  <Router>
+    <InfoScreen />
+  </Router>
+))
