@@ -3,6 +3,7 @@ import finds from './data/finds.js'
 
 const initialState = {
   finds: finds,
+  Material: [],
   selectedIndex: null,
 }
 
