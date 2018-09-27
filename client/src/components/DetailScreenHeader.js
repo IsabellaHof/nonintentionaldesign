@@ -23,7 +23,7 @@ export default class DetailScreenHeader extends Component {
     return (
       <React.Fragment>
         <HeaderStyled>
-          <Link to={'/'}>
+          <Link to={'/nids'}>
             <img src={closeButton} alt="Logo" />
           </Link>
         </HeaderStyled>
