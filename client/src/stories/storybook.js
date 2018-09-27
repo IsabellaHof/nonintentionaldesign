@@ -37,7 +37,11 @@ storiesOf('ImageScreen', module).add('default', () => (
   </Router>
 ))
 
-storiesOf('Header', module).add('default', () => <ImageScreenHeader />)
+storiesOf('Header', module).add('default', () => (
+  <Router>
+    <ImageScreenHeader />
+  </Router>
+))
 
 storiesOf('DetailScreenHeader', module).add('default', () => (
   <Router>
