@@ -6,6 +6,7 @@ import { createStore } from 'redux'
 import ImageScreenContainer from '../containers/ImageScreenContainer'
 import DetailScreenContainer from '../containers/DetailScreenContainer'
 import InfoScreen from './screen/InfoScreen'
+import FilterScreen from './screen/FilterScreen'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 const store = createStore(reducer)
@@ -19,6 +20,7 @@ class App extends Component {
             <Route exact path="/" component={InfoScreen} />
             <Route path="/nids" component={ImageScreenContainer} />
             <Route path="/detail/:id" component={DetailScreenContainer} />
+            <Route path="/filter" component={FilterScreen} />
           </div>
         </Provider>
       </Router>

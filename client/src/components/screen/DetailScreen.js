@@ -32,36 +32,40 @@ const DiscoverDetailStyled = styled.div`
   margin-bottom: 25px;
 `
 const TagStyled = styled.div`
+  background-color: #fc4955;
+  color: white;
+  display: inline-block;
   font-family: 'Roboto Mono';
   font-size: 14px;
   font-weight: 400;
-  margin-bottom: 200px;
-  display: inline-block;
-  background-color: #fc4955;
-  padding: 6px;
   margin: 6px;
-  color: white;
+  margin-bottom: 200px;
+  padding: 6px;
 `
 const TagMainPointSyled = styled.a`
+  color: #fc4955;
   font-family: 'Roboto Mono';
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 200px;
-  color: #fc4955;
 `
 
 export default class DetailScreen extends Component {
   static propTypes = {
+    state: PropTypes.arrayOf(PropTypes.object),
     finds: PropTypes.arrayOf(PropTypes.object),
-    Material: PropTypes.arrayOf(PropTypes.object),
     selectedIndex: PropTypes.number,
   }
 
   renderTags() {
-    const { Material } = this.props
-    return this.props.finds.map(index => (
-      <TagStyled key={index} text={Material} />
-    ))
+    const { state } = this.props
+    return this.props.finds[state.selectedIndex].Material.map((tag, index) => {
+      return (
+        <TagStyled key={index} text={tag}>
+          {tag}
+        </TagStyled>
+      )
+    })
   }
 
   render() {
@@ -86,10 +90,7 @@ export default class DetailScreen extends Component {
         <DiscoverDetailStyled>
           discovered by {findPerson} in {findCity},{findCountry}
         </DiscoverDetailStyled>
-        <TagMainPointSyled>
-          Material:
-          {this.renderTags()}
-        </TagMainPointSyled>
+        <TagMainPointSyled>Material: {this.renderTags()}</TagMainPointSyled>
       </React.Fragment>
     )
   }
