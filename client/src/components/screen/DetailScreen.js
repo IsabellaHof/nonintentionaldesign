@@ -59,13 +59,15 @@ export default class DetailScreen extends Component {
 
   renderTags() {
     const { state } = this.props
-    return this.props.finds[state.selectedIndex].Material.map((tag, index) => {
-      return (
-        <TagStyled key={index} text={tag}>
-          {tag}
-        </TagStyled>
-      )
-    })
+    return this.props.finds[state.selectedIndex].findMaterial.map(
+      (tag, index) => {
+        return (
+          <TagStyled key={index} text={tag}>
+            {tag}
+          </TagStyled>
+        )
+      }
+    )
   }
 
   render() {

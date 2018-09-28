@@ -16,7 +16,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
-    Material: ['Ventilator', 'Fan', 'Plastic Bag'],
+    findMaterial: ['Ventilator', 'Fan', 'Plastic Bag'],
     id: '001',
   },
   {
@@ -27,7 +27,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
-    Material: 'Road Barrier',
+    findMaterial: 'Road Barrier',
     id: '002',
   },
   {
@@ -38,7 +38,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Laos',
     findCity: 'Phonsavan',
-    Material: ['War Waste', 'Bomb'],
+    findMaterial: ['War Waste', 'Bomb'],
     id: '003',
   },
   {
@@ -49,7 +49,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Laos',
     findCity: 'Phonsavan',
-    Material: ['War Waste', 'Bomb'],
+    findMaterial: ['War Waste', 'Bomb'],
     id: '004',
   },
 
@@ -61,7 +61,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
-    Material: ['Plastic Bag'],
+    findMaterial: ['Plastic Bag'],
     id: '005',
   },
   {
@@ -72,7 +72,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Laos',
     findCity: 'Phonsavan',
-    Material: 'Umbrella',
+    findMaterial: 'Umbrella',
     id: '006',
   },
   {
@@ -83,7 +83,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
-    Material: ['Ventilator', 'Fan'],
+    findMaterial: ['Ventilator', 'Fan'],
     id: '007',
   },
   {
@@ -94,7 +94,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
-    Material: 'Plastic Water Bottle',
+    findMaterial: 'Plastic Water Bottle',
     id: '008',
   },
 ]
