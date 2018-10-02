@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import DetailScreenHeader from '../DetailScreenHeader'
+import CommentBoxContainer from '../../containers/CommentBoxContainer.js'
 import styled from 'styled-components'
 
 const StyledImageContainer = styled.div`
@@ -39,7 +40,7 @@ const TagStyled = styled.div`
   font-size: 14px;
   font-weight: 400;
   margin: 6px;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
   padding: 6px;
 `
 const TagMainPointSyled = styled.a`
@@ -47,7 +48,7 @@ const TagMainPointSyled = styled.a`
   font-family: 'Roboto Mono';
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
 `
 
 export default class DetailScreen extends Component {
@@ -58,16 +59,14 @@ export default class DetailScreen extends Component {
   }
 
   renderTags() {
-    const { state } = this.props
-    return this.props.finds[state.selectedIndex].findMaterial.map(
-      (tag, index) => {
-        return (
-          <TagStyled key={index} text={tag}>
-            {tag}
-          </TagStyled>
-        )
-      }
-    )
+    const { selectedIndex } = this.props
+    return this.props.finds[selectedIndex].findMaterial.map((tag, index) => {
+      return (
+        <TagStyled key={index} text={tag}>
+          {tag}
+        </TagStyled>
+      )
+    })
   }
 
   render() {
@@ -90,9 +89,11 @@ export default class DetailScreen extends Component {
         <HeadlineDetailStyled>{findName}</HeadlineDetailStyled>
         <TextDetailStyled>{findDescription}</TextDetailStyled>
         <DiscoverDetailStyled>
-          discovered by {findPerson} in {findCity},{findCountry}
+          discovered by {findPerson} in {findCity}, {findCountry}
         </DiscoverDetailStyled>
         <TagMainPointSyled>Material: {this.renderTags()}</TagMainPointSyled>
+        <hr />
+        <CommentBoxContainer />
       </React.Fragment>
     )
   }

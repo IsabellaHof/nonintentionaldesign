@@ -27,7 +27,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
-    findMaterial: 'Road Barrier',
+    findMaterial: ['Road Barrier'],
     id: '002',
   },
   {
@@ -72,7 +72,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Laos',
     findCity: 'Phonsavan',
-    findMaterial: 'Umbrella',
+    findMaterial: ['Umbrella'],
     id: '006',
   },
   {
@@ -94,7 +94,7 @@ const finds = [
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
-    findMaterial: 'Plastic Water Bottle',
+    findMaterial: ['Plastic Water Bottle'],
     id: '008',
   },
 ]

@@ -8,8 +8,13 @@ import DetailScreenContainer from '../containers/DetailScreenContainer'
 import InfoScreen from './screen/InfoScreen'
 import FilterScreen from './screen/FilterScreen'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+// import thunk from 'redux-thunk'
+// import { saveToLocalStorage } from '../middleware'
 
-const store = createStore(reducer)
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 class App extends Component {
   render() {
@@ -19,7 +24,7 @@ class App extends Component {
           <div>
             <Route exact path="/" component={InfoScreen} />
             <Route path="/nids" component={ImageScreenContainer} />
-            <Route path="/detail/:id" component={DetailScreenContainer} />
+            <Route path="/detail" component={DetailScreenContainer} />
             <Route path="/filter" component={FilterScreen} />
           </div>
         </Provider>

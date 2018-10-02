@@ -1,9 +1,11 @@
 import ACTIONS from './actions'
 import finds from './data/finds.js'
+import { load } from './services.js'
 
-const initialState = {
+const initialState = load('app') || {
   finds: finds,
   selectedIndex: null,
+  comments: [],
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -16,6 +18,20 @@ export default function reducer(state = initialState, action = {}) {
       selectedIndex: payload.index,
     }
 
+  case ACTIONS.ADD_COMMENT:
+    return {
+      ...state,
+      comments: [...state.comments, action.payload],
+    }
+
+  case ACTIONS.ON_DELETE_COMMENT:
+    return {
+      ...state,
+      comments: [
+        ...state.comments.slice(0, action.payload),
+        ...state.comments.slice(action.payload + 1),
+      ],
+    }
   default:
     return state
   }
