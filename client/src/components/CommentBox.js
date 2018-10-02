@@ -4,31 +4,31 @@ import comment from '../img/comment_button_grey.svg'
 import PropTypes from 'prop-types'
 
 const CommentButtonContainer = styled.div`
-  height: 40px;
   align-items: center;
-  justify-content: start;
   display: flex;
+  height: 40px;
+  justify-content: start;
 `
 const CommentButtonFontStyled = styled.div`
+  align-items: center;
   color: #9b9b9b;
+  display: flex;
   font-family: 'Roboto Mono';
   font-size: 16px;
   font-weight: 700;
-  align-items: center;
   justify-content: start;
-  display: flex;
 `
-const Image = styled.img`
+const CommentButton = styled.img`
   margin-right: 3px;
 `
 const CommentInputStyled = styled.textarea`
-  width: 96%;
+  background: #f7f7f7;
+  border: 3px solid #fc4955;
   height: 100px;
   margin-top: 20px;
-  border: 4px solid #fc4955;
   padding: 10px;
-  background: #f7f7f7;
   outline: none;
+  width: 96%;
 `
 const PostButtonStyled = styled.div`
   background-color: #fc4955;
@@ -37,18 +37,38 @@ const PostButtonStyled = styled.div`
   font-family: 'Roboto Mono';
   font-size: 14px;
   font-weight: 400;
-  margin: 6px;
   margin-bottom: 20px;
   padding: 6px;
   outline: none;
 `
+const CommentShowHeadlineStyled = styled.div`
+  font-family: 'Roboto Mono';
+  font-size: 14px;
+  font-weight: 700;
+`
+
+const CommentShowStyled = styled.div`
+  font-family: 'Roboto Mono';
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 50px;
+`
+const DeleteButtonStyled = styled.button`
+  color: #fc4955;
+  opacity: 0;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+`
 
 export default class CommentBox extends Component {
   static propTypes = {
-    onChange: PropTypes.func,
-    comments: PropTypes.any,
-    onDeleteComment: PropTypes.func,
     addComment: PropTypes.func.isRequired,
+    comments: PropTypes.any,
+    onChange: PropTypes.func,
+    onDeleteComment: PropTypes.func,
     placeholder: PropTypes.string,
   }
 
@@ -73,26 +93,35 @@ export default class CommentBox extends Component {
     }
   }
 
+  checkForButton = () => {
+    const { inputValue } = this.state
+    this.props.addComment(inputValue)
+    this.setState({
+      inputValue: '',
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
         <CommentButtonContainer>
           <CommentButtonFontStyled>
-            <Image src={comment} alt="Comment Button" />
+            <CommentButton src={comment} alt="Comment Button" />
             comment
           </CommentButtonFontStyled>
         </CommentButtonContainer>
         <CommentInputStyled
           type="text"
-          placeholder={this.props.placeholder || 'to comment ...'}
+          placeholder={this.props.placeholder || 'Name: ... to comment ...'}
           onChange={this.updateInputValue}
           autoFocus
           value={this.state.inputValue}
           onKeyUp={this.checkForEnterButton}
         />
-        <PostButtonStyled>Post</PostButtonStyled>
+        <PostButtonStyled onClick={this.checkForButton}>Post</PostButtonStyled>
+        <CommentShowHeadlineStyled>show all comments</CommentShowHeadlineStyled>
         <hr />
-        {this.renderComments()}
+        <CommentShowStyled>{this.renderComments()}</CommentShowStyled>
       </React.Fragment>
     )
   }
@@ -104,7 +133,9 @@ export default class CommentBox extends Component {
         {comments.map((comment, index) => (
           <div key={index}>
             <span>{comment.text}</span>
-            <span onClick={() => onDeleteComment(index)}>x</span>
+            <DeleteButtonStyled onClick={() => onDeleteComment(index)}>
+              &times;
+            </DeleteButtonStyled>
           </div>
         ))}
       </div>

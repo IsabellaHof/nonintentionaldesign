@@ -59,7 +59,7 @@ export default class ImageScreen extends Component {
         <ImageScreenContainer>
           {finds.map((find, index) => {
             return (
-              <Link to={'/detail'} key={index}>
+              <Link to={'/detail/' + find.id} key={index}>
                 <Image
                   key={index}
                   onClick={() => onImageClick(index)}
