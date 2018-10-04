@@ -7,6 +7,10 @@ router.post('/', (req, res) => {
     image: req.body.image,
     findName: req.body.findName,
     findDescription: req.body.findDescription,
+    findPerson: req.body.findPerson,
+    findCountry: req.body.findCountry,
+    findCity: req.body.findCity,
+    findMaterial: req.body.findMaterial,
     id: req.body.id,
   }
   Find.create(newFind)

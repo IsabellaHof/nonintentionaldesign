@@ -12,6 +12,22 @@ const FindSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  findPerson: {
+    type: String,
+    required: true,
+  },
+  findCountry: {
+    type: String,
+    required: true,
+  },
+  findCity: {
+    type: String,
+    required: true,
+  },
+  findMaterial: {
+    type: Array,
+    required: true,
+  },
   date: {
     type: Date,
     default: Date.now,
