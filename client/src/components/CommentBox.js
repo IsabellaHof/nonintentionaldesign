@@ -42,7 +42,7 @@ const PostButtonStyled = styled.div`
   cursor: pointer;
 `
 const CommentShowHeadlineStyled = styled.div`
-  color: #000000;
+  color: #4a4a4a;
   cursor: pointer;
   font-size: 14px;
   margin-top: 20px;

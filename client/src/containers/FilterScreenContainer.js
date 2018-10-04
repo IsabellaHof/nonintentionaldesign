@@ -3,7 +3,7 @@ import FilterScreen from '../components/screen/FilterScreen.js'
 
 const mapStateToProps = state => ({
   finds: state.finds,
-  index: state.index,
+  selectedIndex: state.selectedIndex,
 })
 
 export default connect(

@@ -6,7 +6,7 @@ import { applyMiddleware, createStore } from 'redux'
 import ImageScreenContainer from '../containers/ImageScreenContainer'
 import DetailScreenContainer from '../containers/DetailScreenContainer'
 import InfoScreen from './screen/InfoScreen'
-import FilterScreen from './screen/FilterScreen'
+import FilterScreenContainer from '../containers/FilterScreenContainer'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import thunk from 'redux-thunk'
 import { saveToLocalStorage } from '../middleware'
@@ -26,7 +26,7 @@ class App extends Component {
             <Route exact path="/" component={InfoScreen} />
             <Route path="/nids" component={ImageScreenContainer} />
             <Route path="/detail/:id" component={DetailScreenContainer} />
-            <Route path="/filter" component={FilterScreen} />
+            <Route path="/filter" component={FilterScreenContainer} />
           </div>
         </Provider>
       </Router>

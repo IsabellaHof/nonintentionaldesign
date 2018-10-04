@@ -30,6 +30,7 @@ const DiscoverDetailStyled = styled.div`
   margin-bottom: 30px;
 `
 const TagStyled = styled.div`
+  color: #fc4955;
   border: 2px solid #fc4955;
   display: inline-block;
   font-size: 14px;
@@ -44,6 +45,7 @@ const TagStyled = styled.div`
   }
 `
 const TagMainPointStyled = styled.a`
+  color: #000000;
   font-size: 16px;
   margin-bottom: 20px;
 `
