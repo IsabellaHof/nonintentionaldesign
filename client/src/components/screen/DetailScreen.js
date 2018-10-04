@@ -51,15 +51,23 @@ const TagMainPointStyled = styled.a`
 `
 
 export default class DetailScreen extends Component {
+  componentDidMount() {
+    this.props.fetchSingleFind(this.props.match.params.id)
+  }
+
   static propTypes = {
     state: PropTypes.arrayOf(PropTypes.object),
     finds: PropTypes.arrayOf(PropTypes.object),
     selectedIndex: PropTypes.number,
+    fetchSingleFind: PropTypes.func,
+    match: PropTypes.any,
+    find: PropTypes.any,
+    comments: PropTypes.any,
   }
 
   renderTags() {
     const { selectedIndex } = this.props
-    return this.props.finds[selectedIndex].findMaterial.map((tag, index) => {
+    return this.props.find[selectedIndex].findMaterial.map((tag, index) => {
       return (
         <TagStyled key={index} text={tag}>
           {tag}
@@ -69,33 +77,38 @@ export default class DetailScreen extends Component {
   }
 
   render() {
-    const { finds, selectedIndex } = this.props
-    const {
-      image,
-      findName,
-      findDescription,
-      findPerson,
-      findCity,
-      findCountry,
-    } = finds[selectedIndex]
+    if (this.props.find) {
+      const { find, selectedIndex } = this.props
+      console.log(this.props)
+      const {
+        image,
+        findName,
+        findDescription,
+        findPerson,
+        findCity,
+        findCountry,
+      } = find[selectedIndex]
 
-    return (
-      <React.Fragment>
-        <DetailScreenHeader />
-        <StyledImageContainer>
-          <Image src={image} alt="" />
-        </StyledImageContainer>
-        <HeadlineDetailStyled>{findName}</HeadlineDetailStyled>
-        <TextDetailStyled>{findDescription}</TextDetailStyled>
-        <DiscoverDetailStyled>
-          discovered by {findPerson} in {findCity}, {findCountry}
-        </DiscoverDetailStyled>
-        <TagMainPointStyled>
-          Material <div>{this.renderTags()}</div>
-        </TagMainPointStyled>
-        <hr />
-        <CommentBoxContainer />
-      </React.Fragment>
-    )
+      return (
+        <React.Fragment>
+          <DetailScreenHeader />
+          <StyledImageContainer>
+            <Image src={image} alt="" />
+          </StyledImageContainer>
+          <HeadlineDetailStyled>{findName}</HeadlineDetailStyled>
+          <TextDetailStyled>{findDescription}</TextDetailStyled>
+          <DiscoverDetailStyled>
+            discovered by {findPerson} in {findCity}, {findCountry}
+          </DiscoverDetailStyled>
+          <TagMainPointStyled>
+            Material <div>{this.renderTags()}</div>
+          </TagMainPointStyled>
+          <hr />
+          <CommentBoxContainer />
+        </React.Fragment>
+      )
+    } else {
+      return <div>help</div>
+    }
   }
 }

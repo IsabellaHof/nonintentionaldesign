@@ -148,7 +148,8 @@ export default class CommentBox extends Component {
   }
 
   renderLongOrShortComment() {
-    const { comments } = this.props
+    const { comments } = this.props.comments[0]
+
     return this.state.hiddenComment ? (
       <CommentShowHeadlineStyled onClick={this.toggleComment}>
         show all {comments.length} comments
@@ -175,18 +176,21 @@ export default class CommentBox extends Component {
   }
 
   renderComments() {
-    const { comments, onDeleteComment } = this.props
-
+    const { comments, onDeleteComment } = this.props.comments[0]
+    console.log(comments)
     return (
       <div>
-        {comments.map((comment, index) => (
-          <div key={index}>
-            {comment.text}
-            <DeleteButtonStyled onClick={() => onDeleteComment(index)}>
-              &times;
-            </DeleteButtonStyled>
-          </div>
-        ))}
+        {comments.map((comment, index) => {
+          console.log(comment)
+          return (
+            <div key={index}>
+              {comment}
+              <DeleteButtonStyled onClick={() => onDeleteComment(index)}>
+                &times;
+              </DeleteButtonStyled>
+            </div>
+          )
+        })}
       </div>
     )
   }

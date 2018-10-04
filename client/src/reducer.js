@@ -1,17 +1,28 @@
 import ACTIONS from './actions'
-import finds from './data/finds.js'
+// import finds from './data/finds.js'
 import { load } from './services.js'
 
 const initialState = load('app') || {
-  finds: finds,
+  // finds: finds,
   selectedIndex: null,
-  comments: [],
+  // comments: [],
 }
 
 export default function reducer(state = initialState, action = {}) {
   const { payload } = action
 
   switch (action.type) {
+  case ACTIONS.RECEIVE_SINGLE_FIND:
+    return {
+      ...state,
+      find: action.payload.find,
+    }
+  case ACTIONS.RECEIVE_FINDS:
+    return {
+      ...state,
+      finds: action.payload.finds,
+    }
+
   case ACTIONS.IMAGE_SELECTED:
     return {
       ...state,

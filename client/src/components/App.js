@@ -25,7 +25,7 @@ class App extends Component {
           <div>
             <Route exact path="/" component={InfoScreen} />
             <Route path="/nids" component={ImageScreenContainer} />
-            <Route path="/detail/:id" component={DetailScreenContainer} />
+            <Route path="/finds/:id" component={DetailScreenContainer} />
             <Route path="/filter" component={FilterScreenContainer} />
           </div>
         </Provider>

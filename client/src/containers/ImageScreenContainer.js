@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { imageSelected } from '../actions'
-
+import { fetchFinds } from '../actions'
 import ImageScreen from '../components/screen/ImageScreen.js'
 
 const mapStateToProps = state => ({
@@ -9,6 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onImageClick: index => dispatch(imageSelected({ index })),
+  fetchFinds: () => dispatch(fetchFinds()),
 })
 
 export default connect(

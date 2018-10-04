@@ -3,7 +3,7 @@ import { addComment, onDeleteComment } from '../actions'
 import CommentBox from '../components/CommentBox'
 
 const mapStateToProps = state => ({
-  comments: state.comments,
+  comments: state.find,
 })
 
 const mapDispatchToProps = dispatch => ({

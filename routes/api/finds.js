@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
     findCountry: req.body.findCountry,
     findCity: req.body.findCity,
     findMaterial: req.body.findMaterial,
-    id: req.body.id,
+    comments: req.body.comments,
   }
   Find.create(newFind)
     .then(data => res.json(data))

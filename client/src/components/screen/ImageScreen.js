@@ -29,9 +29,14 @@ const Image = styled.img`
 `
 
 export default class ImageScreen extends Component {
+  componentDidMount() {
+    this.props.fetchFinds()
+  }
+
   static propTypes = {
     finds: PropTypes.arrayOf(PropTypes.object),
     onImageClick: PropTypes.func.isRequired,
+    fetchFinds: PropTypes.func.isRequired,
   }
 
   state = {
@@ -59,7 +64,7 @@ export default class ImageScreen extends Component {
         <ImageScreenContainer>
           {finds.map((find, index) => {
             return (
-              <Link to={'/detail/' + find.id} key={index}>
+              <Link to={`/finds/${find._id}`} key={index}>
                 <Image
                   key={index}
                   onClick={() => onImageClick(index)}
@@ -100,13 +105,17 @@ export default class ImageScreen extends Component {
   }
 
   render() {
-    return (
-      <React.Fragment>
-        <div data-test-id="ImageScreen">
-          <ImageScreenHeader />
-          {this.renderGridOrRowArrangments()}
-        </div>
-      </React.Fragment>
-    )
+    if (this.props.finds) {
+      return (
+        <React.Fragment>
+          <div data-test-id="ImageScreen">
+            <ImageScreenHeader />
+            {this.renderGridOrRowArrangments()}
+          </div>
+        </React.Fragment>
+      )
+    } else {
+      return <div>Help</div>
+    }
   }
 }
