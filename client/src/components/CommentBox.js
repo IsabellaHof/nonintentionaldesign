@@ -177,11 +177,10 @@ export default class CommentBox extends Component {
 
   renderComments() {
     const { comments, onDeleteComment } = this.props.comments[0]
-    console.log(comments)
+
     return (
       <div>
         {comments.map((comment, index) => {
-          console.log(comment)
           return (
             <div key={index}>
               {comment}

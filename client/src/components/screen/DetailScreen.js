@@ -66,8 +66,8 @@ export default class DetailScreen extends Component {
   }
 
   renderTags() {
-    const { selectedIndex } = this.props
-    return this.props.find[selectedIndex].findMaterial.map((tag, index) => {
+    // const { selectedIndex } = this.props
+    return this.props.find[0].findMaterial.map((tag, index) => {
       return (
         <TagStyled key={index} text={tag}>
           {tag}
@@ -78,8 +78,7 @@ export default class DetailScreen extends Component {
 
   render() {
     if (this.props.find) {
-      const { find, selectedIndex } = this.props
-      console.log(this.props)
+      const { find } = this.props
       const {
         image,
         findName,
@@ -87,8 +86,7 @@ export default class DetailScreen extends Component {
         findPerson,
         findCity,
         findCountry,
-      } = find[selectedIndex]
-
+      } = find[0]
       return (
         <React.Fragment>
           <DetailScreenHeader />
