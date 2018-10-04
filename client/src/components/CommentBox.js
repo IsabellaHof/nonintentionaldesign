@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import comment from '../img/comment_button_grey.svg'
+import comment_button_grey from '../img/comment_button_grey.svg'
+import comment_button from '../img/comment_button.svg'
 import PropTypes from 'prop-types'
 
 const CommentButtonContainer = styled.div`
@@ -17,6 +18,7 @@ const CommentButtonFontStyled = styled.div`
   font-size: 16px;
   font-weight: 700;
   justify-content: start;
+  cursor: pointer;
 `
 const CommentButton = styled.img`
   margin-right: 3px;
@@ -40,27 +42,35 @@ const PostButtonStyled = styled.div`
   margin-bottom: 20px;
   padding: 6px;
   outline: none;
+  cursor: pointer;
 `
 const CommentShowHeadlineStyled = styled.div`
+  cursor: pointer;
   font-family: 'Roboto Mono';
   font-size: 14px;
   font-weight: 700;
+  margin-top: 20px;
 `
 
 const CommentShowStyled = styled.div`
   font-family: 'Roboto Mono';
   font-size: 14px;
   font-weight: 400;
-  margin-bottom: 50px;
 `
-const DeleteButtonStyled = styled.button`
-  color: #fc4955;
+const DeleteButtonStyled = styled.a`
+  margin-left: 2px;
   opacity: 0;
 
   &:hover {
-    opacity: 1;
+    color: #fc4955;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 1;
   }
+`
+const Space = styled.div`
+  margin-bottom: 150px;
 `
 
 export default class CommentBox extends Component {
@@ -74,6 +84,8 @@ export default class CommentBox extends Component {
 
   state = {
     inputValue: '',
+    hidden: true,
+    hiddenComment: true,
   }
 
   updateInputValue = event => {
@@ -101,30 +113,73 @@ export default class CommentBox extends Component {
     })
   }
 
-  render() {
-    return (
+  toggleCommentBox = () => {
+    this.setState({
+      hidden: !this.state.hidden,
+    })
+  }
+  toggleComment = () => {
+    this.setState({
+      hiddenComment: !this.state.hiddenComment,
+    })
+  }
+
+  renderLongOrShortCommentBox() {
+    return this.state.hidden ? (
+      <CommentButtonContainer onClick={this.toggleCommentBox}>
+        <CommentButtonFontStyled>
+          <CommentButton src={comment_button_grey} alt="Comment Button" />
+          comment
+        </CommentButtonFontStyled>
+      </CommentButtonContainer>
+    ) : (
       <React.Fragment>
-        <CommentButtonContainer>
-          <CommentButtonFontStyled>
-            <CommentButton src={comment} alt="Comment Button" />
+        <CommentButtonContainer onClick={this.toggleCommentBox}>
+          <CommentButtonFontStyled style={{ color: '#fc4955' }}>
+            <CommentButton src={comment_button} alt="Comment Button" />
             comment
           </CommentButtonFontStyled>
         </CommentButtonContainer>
         <CommentInputStyled
           type="text"
-          placeholder={this.props.placeholder || 'Name: ... to comment ...'}
+          placeholder={this.props.placeholder || 'to comment ...'}
           onChange={this.updateInputValue}
           autoFocus
           value={this.state.inputValue}
           onKeyUp={this.checkForEnterButton}
         />
         <PostButtonStyled onClick={this.checkForButton}>Post</PostButtonStyled>
-        <CommentShowHeadlineStyled>show all comments</CommentShowHeadlineStyled>
+      </React.Fragment>
+    )
+  }
+
+  renderLongOrShortComment() {
+    const { comments } = this.props
+    return this.state.hiddenComment ? (
+      <CommentShowHeadlineStyled onClick={this.toggleComment}>
+        show all {comments.length} comments
+      </CommentShowHeadlineStyled>
+    ) : (
+      <React.Fragment>
+        <CommentShowHeadlineStyled onClick={this.toggleComment}>
+          show all {comments.length} comments
+        </CommentShowHeadlineStyled>
         <hr />
         <CommentShowStyled>{this.renderComments()}</CommentShowStyled>
       </React.Fragment>
     )
   }
+
+  render() {
+    return (
+      <React.Fragment>
+        {this.renderLongOrShortCommentBox()}
+        {this.renderLongOrShortComment()}
+        <Space />
+      </React.Fragment>
+    )
+  }
+
   renderComments() {
     const { comments, onDeleteComment } = this.props
 
@@ -132,7 +187,7 @@ export default class CommentBox extends Component {
       <div>
         {comments.map((comment, index) => (
           <div key={index}>
-            <span>{comment.text}</span>
+            {comment.text}
             <DeleteButtonStyled onClick={() => onDeleteComment(index)}>
               &times;
             </DeleteButtonStyled>

@@ -29,22 +29,38 @@ const DiscoverDetailStyled = styled.div`
   font-family: 'Roboto Mono';
   font-size: 14px;
   font-weight: 400;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 15px;
+  margin-bottom: 30px;
 `
 const TagStyled = styled.div`
-  background-color: #fc4955;
-  color: white;
+  border: 2px solid #fc4955;
+  color: #fc4955;
   display: inline-block;
   font-family: 'Roboto Mono';
   font-size: 14px;
-  font-weight: 400;
-  margin: 6px;
+  font-weight: 700;
+  margin-right: 6px;
+  margin-top: 6px;
   margin-bottom: 20px;
   padding: 6px;
+
+  &:hover {
+    background-color: #fc4955;
+    color: white;
+    font-family: 'Roboto Mono';
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    font-family: 'Roboto Mono';
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 6px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    padding: 6px;
+  }
 `
-const TagMainPointSyled = styled.a`
-  color: #fc4955;
+const TagMainPointStyled = styled.a`
   font-family: 'Roboto Mono';
   font-size: 16px;
   font-weight: 700;
@@ -91,7 +107,9 @@ export default class DetailScreen extends Component {
         <DiscoverDetailStyled>
           discovered by {findPerson} in {findCity}, {findCountry}
         </DiscoverDetailStyled>
-        <TagMainPointSyled>Material: {this.renderTags()}</TagMainPointSyled>
+        <TagMainPointStyled>
+          Material <div>{this.renderTags()}</div>
+        </TagMainPointStyled>
         <hr />
         <CommentBoxContainer />
       </React.Fragment>
