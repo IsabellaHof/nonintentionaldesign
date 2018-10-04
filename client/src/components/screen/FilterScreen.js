@@ -9,18 +9,14 @@ const FilterContainer = styled.div`
 `
 
 const TagMainPointStyled = styled.a`
-  font-family: 'Roboto Mono';
   font-size: 16px;
-  font-weight: 700;
   margin-bottom: 20px;
 `
 const TagStyled = styled.div`
   border: 2px solid #fc4955;
   color: #fc4955;
   display: inline-block;
-  font-family: 'Roboto Mono';
   font-size: 14px;
-  font-weight: 700;
   margin-right: 6px;
   margin-top: 6px;
   margin-bottom: 20px;
@@ -29,17 +25,6 @@ const TagStyled = styled.div`
   &:hover {
     background-color: #fc4955;
     color: white;
-    font-family: 'Roboto Mono';
-    font-size: 14px;
-    font-weight: 700;
-    display: inline-block;
-    font-family: 'Roboto Mono';
-    font-size: 14px;
-    font-weight: 400;
-    margin-right: 6px;
-    margin-top: 6px;
-    margin-bottom: 20px;
-    padding: 6px;
   }
 `
 

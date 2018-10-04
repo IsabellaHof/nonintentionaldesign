@@ -13,20 +13,17 @@ const Image = styled.img`
   width: 100%;
 `
 const HeadlineDetailStyled = styled.div`
-  color: #fc4955;
-  font-family: 'Roboto Mono';
   font-style: italic;
   font-size: 38px;
-  font-weight: 700;
 `
 const TextDetailStyled = styled.div`
+  color: #000000;
   font-family: 'Loro';
   font-size: 26px;
-  font-weight: 700;
   margin-top: 25px;
 `
 const DiscoverDetailStyled = styled.div`
-  font-family: 'Roboto Mono';
+  color: #000000;
   font-size: 14px;
   font-weight: 400;
   margin-top: 15px;
@@ -34,11 +31,8 @@ const DiscoverDetailStyled = styled.div`
 `
 const TagStyled = styled.div`
   border: 2px solid #fc4955;
-  color: #fc4955;
   display: inline-block;
-  font-family: 'Roboto Mono';
   font-size: 14px;
-  font-weight: 700;
   margin-right: 6px;
   margin-top: 6px;
   margin-bottom: 20px;
@@ -47,23 +41,10 @@ const TagStyled = styled.div`
   &:hover {
     background-color: #fc4955;
     color: white;
-    font-family: 'Roboto Mono';
-    font-size: 14px;
-    font-weight: 700;
-    display: inline-block;
-    font-family: 'Roboto Mono';
-    font-size: 14px;
-    font-weight: 400;
-    margin-right: 6px;
-    margin-top: 6px;
-    margin-bottom: 20px;
-    padding: 6px;
   }
 `
 const TagMainPointStyled = styled.a`
-  font-family: 'Roboto Mono';
   font-size: 16px;
-  font-weight: 700;
   margin-bottom: 20px;
 `
 

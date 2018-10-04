@@ -14,9 +14,7 @@ const CommentButtonFontStyled = styled.div`
   align-items: center;
   color: #9b9b9b;
   display: flex;
-  font-family: 'Roboto Mono';
   font-size: 16px;
-  font-weight: 700;
   justify-content: start;
   cursor: pointer;
 `
@@ -36,7 +34,6 @@ const PostButtonStyled = styled.div`
   background-color: #fc4955;
   color: white;
   display: inline-block;
-  font-family: 'Roboto Mono';
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 20px;
@@ -45,15 +42,14 @@ const PostButtonStyled = styled.div`
   cursor: pointer;
 `
 const CommentShowHeadlineStyled = styled.div`
+  color: #000000;
   cursor: pointer;
-  font-family: 'Roboto Mono';
   font-size: 14px;
-  font-weight: 700;
   margin-top: 20px;
 `
 
 const CommentShowStyled = styled.div`
-  font-family: 'Roboto Mono';
+  color: #000000;
   font-size: 14px;
   font-weight: 400;
 `
@@ -62,10 +58,8 @@ const DeleteButtonStyled = styled.a`
   opacity: 0;
 
   &:hover {
-    color: #fc4955;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 700;
     opacity: 1;
   }
 `

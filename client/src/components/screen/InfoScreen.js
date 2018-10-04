@@ -16,24 +16,18 @@ const InfoScreenImage = styled.div`
   margin-top: 80px;
 `
 const InfoScreenHeadline = styled.div`
-  color: #fc4955;
-  font-family: 'Roboto Mono';
   font-size: 48px;
   font-style: italic;
-  font-weight: 700;
   margin-top: 60px;
 `
 const InfoScreenRunningText = styled.div`
   color: #000000;
   font-family: 'Loro';
   font-size: 38px;
-  font-weight: 700;
   margin-bottom: 60px;
   margin-top: 10px;
 `
 const ImprintStyled = styled.div`
-  color: #fc4955;
-  font-family: 'Roboto Mono';
   font-size: 14px;
   font-weight: 400;
   margin-top: 10px;

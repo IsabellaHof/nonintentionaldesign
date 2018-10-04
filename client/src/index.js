@@ -10,6 +10,9 @@ injectGlobal`
   background: #f7f7f7;
   padding-left: 25px; 
   padding-right: 25px; 
+  font-family: 'Roboto Mono';
+  font-weight: 700;
+  color: #fc4955;
  }
 `
 
