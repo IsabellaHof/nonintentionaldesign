@@ -33,16 +33,6 @@ export default class FilterScreen extends Component {
     finds: PropTypes.arrayOf(PropTypes.object),
     selectedIndex: PropTypes.number,
   }
-  // renderTags() {
-  //   const { finds } = this.props
-  //   return finds.map((tag, index) => {
-  //     return (
-  //       <TagStyled key={index} text={tag}>
-  //         {tag}
-  //       </TagStyled>
-  //     )
-  //   })
-  // }
 
   render() {
     const { finds } = this.props
@@ -57,11 +47,6 @@ export default class FilterScreen extends Component {
             <TagMainPointStyled>Country</TagMainPointStyled>
             <div>{firstCountry.findCountry}</div>
           </section>
-
-          {/* <section>
-            <TagMainPointStyled>Country</TagMainPointStyled>
-            <div>{this.renderTags()}</div>
-          </section> */}
 
           <section>
             <TagMainPointStyled>
@@ -84,10 +69,4 @@ export default class FilterScreen extends Component {
       </React.Fragment>
     )
   }
-}
-
-{
-  /* {Country.map((Country, index) => (
-                  <TagStyled key={index} text={Country} />
-                ))} */
 }

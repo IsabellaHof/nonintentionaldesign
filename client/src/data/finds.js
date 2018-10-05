@@ -12,7 +12,7 @@ const finds = [
     image: nid_1,
     findName: 'Flycatcher',
     findDescription:
-      'Moving flycatchers are by far the most creative and fascinating «Non Intentional Design» objects. Often they are found in markets in Laos and Thailand. In a market in Chiang Mai were tied to a ceiling fan, two pieces of wire and plastic bags to it. By the rotational motion become uninvited flies distributed.',
+      'Moving flycatchers are by far the most creative and fascinating »Non Intentional Design« Objects. You can often find them on markets in Laos and Thailand. Here for example, on a ceiling fan were tied two pieces of wire and plastic straps. By the rotational motion uninvited flies become distributed.',
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
@@ -23,7 +23,7 @@ const finds = [
     image: nid_2,
     findName: 'Clothes Horse',
     findDescription:
-      'In Phrahurat, also known as Little India in Bangkok, I discovered a fascinating object. Apparently this person had had no second drying rack to hang their large amount of laundry. As quickly had to shut the road to serve as a clothes horse.',
+      'In Phrahurat, also known as Little India in Bangkok, I discovered a fascinating object. Apparently, this person had no drying rack to hang her laundry. Instead a road barrier had to serve as a clothes horse.',
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
@@ -34,7 +34,7 @@ const finds = [
     image: nid_3,
     findName: 'Flower Tub',
     findDescription:
-      'Phonsavan, the provincial capital of Xieng Khouang in Laos, is known by the Plain of Jars and the enormous war losses of the Vietnam War (1945-1975). There were there unusual objects that were made from war scrap. Defused bombs they halved in two parts and then the curved cavity of the war to a bomb flower and plant pots transformed.',
+      'Phonsavan, the provincial capital of Xieng Khouang in Laos, is known by the Plain of Jars and the enormous damages of the Vietnam War (1945-1975). The locals have made unusual items from war waste. A war bombs was halved in two parts and one part was convert into a flower and plant container.',
     findPerson: 'Isabella Hof',
     findCountry: 'Laos',
     findCity: 'Phonsavan',
@@ -45,7 +45,7 @@ const finds = [
     image: nid_4,
     findName: 'Garden Fence',
     findDescription:
-      'In Phonsavan, the provincial capital of Xieng Khouang in Laos, we often find garden fences, which are compiled from war defused bombs. Even flower pots are placed decoratively on the bombs.War scrap is used in Laos not only as a fence post, but also for wooden stilt houses and rice barns.',
+      'In Phonsavan, the provincial capital of Xieng Khouang in Laos, you can often find garden fences made of war bombs. Even flowerpots are placed decoratively on the bombs. War waste is not just use as a fence but also use for wooden stilt houses and rice barns.',
     findPerson: 'Isabella Hof',
     findCountry: 'Laos',
     findCity: 'Phonsavan',
@@ -55,9 +55,9 @@ const finds = [
 
   {
     image: nid_5,
-    findName: 'Drink Bag',
+    findName: 'Drinking Bag',
     findDescription:
-      'In Thailand you can buy different types of soft drinks on every street corner. Sometimes they are served in plastic bags with straws. A very practical thing, because you can take it anywhere easily.',
+      'In Thailand you can buy soft drinks on every street corner. Sometimes soft drinks are served in plastic bags. A very practical thing, because you can easily take it anywhere.',
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
@@ -77,9 +77,9 @@ const finds = [
   },
   {
     image: nid_7,
-    findName: 'Bird Cage',
+    findName: 'Birdcage',
     findDescription:
-      'One may doubt if the birds feel comfortable and free, but still they are sitting in that most creative cage. It is a combination of simple metal grates and fans. It is made of two halves of a table fan used as the bottom and roof of the cage held by simple metal lattice or grid. This Thai slum inhabitants of Khlong Toey are very imaginative and inventive.',
+      'In Bangkok you can find creative birdcages in the Khlong Toey slum. The birdcage constists of simple wire mesh and two fan grids. The bottom and roof of the cage are fan grids of an ventilator. The Thai inhabitants of Khlong Toey are very imaginative and inventive people.',
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
@@ -90,7 +90,7 @@ const finds = [
     image: nid_8,
     findName: 'Window Opener',
     findDescription:
-      'In a secluded side street in Bangkok plastic water bottles were used to hold open the window. What an idea.',
+      'In a side street in Bangkok plastic water bottles were used to keep the window open. You have to get this idea first.',
     findPerson: 'Isabella Hof',
     findCountry: 'Thailand',
     findCity: 'Bangkok',
