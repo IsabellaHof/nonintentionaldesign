@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import DetailScreenHeader from '../DetailScreenHeader'
 import CommentBoxContainer from '../../containers/CommentBoxContainer.js'
 import styled from 'styled-components'
+import NavigationBarHome from '../NavigationBarHome'
 
 const StyledImageContainer = styled.div`
   margin-top: 20px;
@@ -103,6 +104,7 @@ export default class DetailScreen extends Component {
           </TagMainPointStyled>
           <hr />
           <CommentBoxContainer />
+          <NavigationBarHome />
         </React.Fragment>
       )
     } else {

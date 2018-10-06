@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DetailScreenHeader from '../DetailScreenHeader'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import NavigationBarFilter from '../NavigationBarFilter'
 
 const FilterContainer = styled.div`
   margin-top: 100px;
@@ -56,16 +57,8 @@ export default class FilterScreen extends Component {
               </div>
             </TagMainPointStyled>
           </section>
-
-          {/* <section>
-            <TagMainPointStyled>
-              Material
-              <div>
-                <TagStyled>Laos</TagStyled>
-              </div>
-            </TagMainPointStyled>
-          </section> */}
         </FilterContainer>
+        <NavigationBarFilter />
       </React.Fragment>
     )
   }

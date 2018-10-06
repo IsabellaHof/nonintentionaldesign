@@ -13,7 +13,7 @@ const InfoScreenContainer = styled.div`
 const InfoScreenImage = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 70px;
 `
 const InfoScreenHeadline = styled.div`
   font-size: 48px;
@@ -24,7 +24,7 @@ const InfoScreenRunningText = styled.div`
   color: #000000;
   font-family: 'Loro';
   font-size: 38px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   margin-top: 10px;
 `
 const ImprintStyled = styled.div`

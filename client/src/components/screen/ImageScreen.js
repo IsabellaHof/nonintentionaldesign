@@ -7,6 +7,7 @@ import arrangement_grid from '../../img/arrangement_grid.svg'
 import arrangement_grid_grey from '../../img/arrangement_grid_grey.svg'
 import arrangement_row from '../../img/arrangement_row.svg'
 import arrangement_row_grey from '../../img/arrangement_row_grey.svg'
+import NavigationBarHome from '../NavigationBarHome'
 
 const ImageScreenContainer = styled.div`
   columns: 2;
@@ -89,7 +90,7 @@ export default class ImageScreen extends Component {
         <ImageScreenContainerRow>
           {finds.map((find, index) => {
             return (
-              <Link to={'/detail/' + find.id} key={index}>
+              <Link to={`/finds/${find._id}`} key={index}>
                 <Image
                   key={index}
                   onClick={() => onImageClick(index)}
@@ -111,6 +112,7 @@ export default class ImageScreen extends Component {
           <div data-test-id="ImageScreen">
             <ImageScreenHeader />
             {this.renderGridOrRowArrangments()}
+            <NavigationBarHome />
           </div>
         </React.Fragment>
       )
