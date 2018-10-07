@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import closeButton from '../img/closebutton.svg'
 import { Link } from 'react-router-dom'
-import logo from '../img/logo.svg'
 
 const HeaderStyled = styled.div`
   background-color: #ffffff;
@@ -18,17 +18,15 @@ const HeaderStyled = styled.div`
   width: 100%;
 `
 
-export default class ImageScreenHeader extends Component {
+export default class DetailScreenHeader extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
-          <HeaderStyled>
-            <Link to={'/'}>
-              <img src={logo} alt="Logo" />
-            </Link>
-          </HeaderStyled>
-        </div>
+        <HeaderStyled>
+          <Link to={'/upload'}>
+            <img src={closeButton} alt="Logo" />
+          </Link>
+        </HeaderStyled>
       </React.Fragment>
     )
   }

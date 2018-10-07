@@ -29,6 +29,11 @@ const CommentInputStyled = styled.textarea`
   padding: 10px;
   outline: none;
   width: 96%;
+  &::-webkit-input-placeholder {
+    color: #fc4955;
+    font-family: 'Roboto Mono';
+    font-weight: 700;
+  }
 `
 const PostButtonStyled = styled.div`
   background-color: #fc4955;

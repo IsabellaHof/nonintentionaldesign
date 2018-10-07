@@ -4,7 +4,7 @@ import closeButton from '../img/closebutton.svg'
 import { Link } from 'react-router-dom'
 
 const HeaderStyled = styled.div`
-  background: white;
+  background-color: #ffffff;
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
   display: flex;
   height: 45px;

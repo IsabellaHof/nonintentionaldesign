@@ -4,7 +4,6 @@ import NavigationBarUpload from '../NavigationBarUpload'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import plusUpload from '../../img/plus_upload.svg'
 
 const ImageScreenContainer = styled.div`
   columns: 2;
@@ -15,15 +14,23 @@ const Image = styled.img`
   margin-bottom: 25px;
   width: 100%;
 `
-const UploadScreenbox = styled.div`
+const UploadBox = styled.div`
   align-content: center;
   border: 6px solid #fc4955;
+  color: #fc4955;
   cursor: pointer;
   display: flex;
-  height: 209px;
+  font-size: 140px;
+  font-weight: 300;
+  height: 100%;
   justify-content: center;
   margin-bottom: 25px;
   width: auto;
+
+  &:hover {
+    background: #fc4955;
+    color: #ffffff;
+  }
 `
 
 export default class UploadScreen extends Component {
@@ -44,10 +51,8 @@ export default class UploadScreen extends Component {
         <React.Fragment>
           <DetailScreenHeader />
           <ImageScreenContainer>
-            <Link to={'/uploaddetail'}>
-              <UploadScreenbox>
-                <img src={plusUpload} alt="" />{' '}
-              </UploadScreenbox>
+            <Link to={'/uploaddetail'} style={{ textDecoration: 'none' }}>
+              <UploadBox>+</UploadBox>
             </Link>
 
             {finds.map((find, index) => {
