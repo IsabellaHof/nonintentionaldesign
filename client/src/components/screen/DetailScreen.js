@@ -12,6 +12,9 @@ const Image = styled.img`
   margin-bottom: 25px;
   height: auto;
   width: 100%;
+  background-image: ${props => `url(/image/${props.src})`};
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 `
 const HeadlineDetailStyled = styled.div`
   font-style: italic;
