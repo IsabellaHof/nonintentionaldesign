@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import NavigationBarFilter from '../NavigationBarFilter'
 
 const FilterContainer = styled.div`
-  margin-top: 100px;
+  margin-top: 80px;
   display: grid;
 `
 const TagMainPointStyled = styled.a`
@@ -28,6 +28,15 @@ const TagStyled = styled.div`
     color: white;
   }
 `
+const ImageScreenContainer = styled.div`
+  margin-top: 25px;
+  columns: 2;
+`
+const Image = styled.img`
+  margin-bottom: 25px;
+  height: auto;
+  width: 100%;
+`
 
 export default class FilterScreen extends Component {
   static propTypes = {
@@ -38,7 +47,8 @@ export default class FilterScreen extends Component {
   render() {
     const { finds } = this.props
     // console.log(finds)
-    const firstCountry = finds[3]
+    const firstCountry = finds[4]
+    const secondCountry = finds[3]
 
     return (
       <React.Fragment>
@@ -46,18 +56,30 @@ export default class FilterScreen extends Component {
         <FilterContainer>
           <section>
             <TagMainPointStyled>Country</TagMainPointStyled>
-            <div>{firstCountry.findCountry}</div>
+            <div>
+              <TagStyled>{firstCountry.findCountry}</TagStyled>
+              <TagStyled>{secondCountry.findCountry}</TagStyled>
+            </div>
           </section>
 
           <section>
             <TagMainPointStyled>
               City
               <div>
-                <TagStyled>Laos</TagStyled>
+                <TagStyled>Bangkok</TagStyled>
+                <TagStyled>Phonsavan</TagStyled>
               </div>
             </TagMainPointStyled>
           </section>
         </FilterContainer>
+        <hr />
+
+        <ImageScreenContainer>
+          {finds.map((find, index) => {
+            return <Image key={index} src={find.image} alt="" />
+          })}
+        </ImageScreenContainer>
+
         <NavigationBarFilter />
       </React.Fragment>
     )
