@@ -24,8 +24,7 @@ const InfoScreenRunningText = styled.div`
   color: #000000;
   font-family: 'Loro';
   font-size: 38px;
-  margin-bottom: 80px;
-  margin-top: 10px;
+  margin: 10px 0 80px 0;
 `
 const ImprintStyled = styled.div`
   font-size: 14px;

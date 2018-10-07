@@ -7,9 +7,8 @@ const HeaderStyled = styled.div`
   background-color: #ffffff;
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
   display: flex;
-  height: 45px;
-
   flex-direction: column;
+  height: 45px;
   justify-content: center;
   margin-left: -33px;
   padding-left: 33px;

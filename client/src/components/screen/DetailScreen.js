@@ -30,17 +30,14 @@ const DiscoverDetailStyled = styled.div`
   color: #000000;
   font-size: 14px;
   font-weight: 400;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin: 15px 0 30px 0;
 `
 const TagStyled = styled.div`
   color: #fc4955;
   border: 2px solid #fc4955;
   display: inline-block;
   font-size: 14px;
-  margin-right: 6px;
-  margin-top: 6px;
-  margin-bottom: 20px;
+  margin: 6px 6px 20px 0;
   padding: 6px;
 
   &:hover {

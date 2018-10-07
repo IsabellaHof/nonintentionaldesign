@@ -16,16 +16,16 @@ const ImageScreenContainerRow = styled.div`
   columns: 1;
 `
 const ArrangementContainer = styled.div`
+  align-items: center;
   display: flex;
   height: 60px;
   justify-content: space-around;
   margin-top: 45px;
-  align-items: center;
 `
 
 const Image = styled.img`
-  margin-bottom: 25px;
   height: auto;
+  margin-bottom: 25px;
   width: 100%;
 `
 

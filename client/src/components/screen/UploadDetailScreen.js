@@ -11,22 +11,18 @@ const TextStyled = styled.div`
 `
 const NidStyled = styled.text`
   color: #fc4955;
-  font-size: 26px;
   font-family: 'Roboto Mono';
+  font-size: 26px;
   font-style: italic;
 `
 const UploadInputBoxContainer = styled.div`
   background-color: #fc4955;
+  margin: 20px 0 0 -33px;
+  padding: 0 33px 20px 33px;
   width: 100%;
-  margin-left: -33px;
-  padding-left: 33px;
-  padding-right: 33px;
-  margin-top: 20px;
-  padding-bottom: 20px;
 `
 const Container = styled.div`
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding: 25px 0 25px 0;
 `
 const UploadBox = styled.div`
   align-content: center;
@@ -82,10 +78,9 @@ const PostButtonStyled = styled.div`
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  margin-top: 20px;
+  margin: 20px 0 80px 0;
   padding: 6px;
   outline: none;
-  margin-bottom: 80px;
 `
 
 export default class UploadDetailScreen extends Component {

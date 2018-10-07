@@ -18,9 +18,7 @@ const TagStyled = styled.div`
   color: #fc4955;
   display: inline-block;
   font-size: 14px;
-  margin-right: 6px;
-  margin-top: 6px;
-  margin-bottom: 20px;
+  margin: 6px 6px 20px 0;
   padding: 6px;
 
   &:hover {

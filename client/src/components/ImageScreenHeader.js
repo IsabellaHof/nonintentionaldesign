@@ -8,7 +8,6 @@ const HeaderStyled = styled.div`
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
   display: flex;
   height: 45px;
-
   flex-direction: column;
   justify-content: center;
   margin-left: -33px;
