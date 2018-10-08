@@ -29,6 +29,9 @@ const CommentInputStyled = styled.textarea`
   padding: 10px;
   outline: none;
   width: 96%;
+  color: #fc4955;
+  font-family: 'Lora';
+  font-weight: 700;
   &::-webkit-input-placeholder {
     color: #fc4955;
     font-family: 'Roboto Mono';

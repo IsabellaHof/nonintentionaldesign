@@ -51,6 +51,9 @@ const CommentInputStyled = styled.input`
   outline: none;
   width: 96%;
   margin-top: -7px;
+  color: #ffffff;
+  font-family: 'Lora';
+  font-weight: 700;
   &::-webkit-input-placeholder {
     color: #ffffff;
     font-family: 'Roboto Mono';
@@ -65,6 +68,9 @@ const CommentInputStoryStyled = styled.textarea`
   outline: none;
   width: 96%;
   margin-top: -7px;
+  color: #ffffff;
+  font-family: 'Lora';
+  font-weight: 700;
   &::-webkit-input-placeholder {
     color: #ffffff;
     font-family: 'Roboto Mono';

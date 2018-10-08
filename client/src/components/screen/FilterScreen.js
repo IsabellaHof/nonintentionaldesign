@@ -37,49 +37,93 @@ const Image = styled.img`
 `
 
 export default class FilterScreen extends Component {
+  state = {}
+
+  componentDidMount() {
+    this.props.fetchFinds()
+  }
+
   static propTypes = {
     finds: PropTypes.arrayOf(PropTypes.object),
     selectedIndex: PropTypes.number,
+    fetchFinds: PropTypes.func.isRequired,
+  }
+
+  checkForCountry = country => {
+    const { finds } = this.props
+    let i
+    let urls = []
+
+    for (i = 0; i < finds.length; i++) {
+      if (finds[i].findCountry === country) {
+        let url = finds[i].image
+        urls = [...urls, url]
+      }
+    }
+    this.setState({ imageURLs: urls })
+  }
+
+  renderImages() {
+    if (this.state.imageURLs) {
+      return this.state.imageURLs.map((image, index) => {
+        return <Image key={index} src={image} alt="" />
+      })
+    } else {
+      <div />
+    }
   }
 
   render() {
-    const { finds } = this.props
-    // console.log(finds)
-    const firstCountry = finds[4]
-    const secondCountry = finds[3]
+    if (this.props.finds) {
+      const { finds } = this.props
+      let i
+      let countries = []
 
-    return (
-      <React.Fragment>
-        <DetailScreenHeader />
-        <FilterContainer>
-          <section>
-            <TagMainPointStyled>Country</TagMainPointStyled>
-            <div>
-              <TagStyled>{firstCountry.findCountry}</TagStyled>
-              <TagStyled>{secondCountry.findCountry}</TagStyled>
-            </div>
-          </section>
-
-          <section>
-            <TagMainPointStyled>
-              City
+      for (i = 0; i < finds.length; i++) {
+        let country = finds[i].findCountry
+        if (!countries.includes(country)) {
+          countries = [...countries, country]
+        }
+      }
+      return (
+        <React.Fragment>
+          <DetailScreenHeader />
+          <FilterContainer>
+            <section>
+              <TagMainPointStyled>Country</TagMainPointStyled>
               <div>
-                <TagStyled>Bangkok</TagStyled>
-                <TagStyled>Phonsavan</TagStyled>
+                {countries.map((country, index) => {
+                  return (
+                    <TagStyled
+                      key={index}
+                      onClick={() => this.checkForCountry(country)}
+                    >
+                      {country}
+                    </TagStyled>
+                  )
+                })}
               </div>
-            </TagMainPointStyled>
-          </section>
-        </FilterContainer>
-        <hr />
+            </section>
 
-        <ImageScreenContainer>
-          {finds.map((find, index) => {
-            return <Image key={index} src={find.image} alt="" />
-          })}
-        </ImageScreenContainer>
+            <section>
+              <TagMainPointStyled>
+                City
+                <div>
+                  <TagStyled>Bangkok</TagStyled>
+                  <TagStyled>Phonsavan</TagStyled>
+                </div>
+              </TagMainPointStyled>
+            </section>
+          </FilterContainer>
+          <hr />
 
-        <NavigationBarFilter />
-      </React.Fragment>
-    )
+          <ImageScreenContainer>{this.renderImages()}</ImageScreenContainer>
+
+          <NavigationBarFilter />
+        </React.Fragment>
+      )
+    } else {
+      return <div>Help</div>
+    }
   }
 }

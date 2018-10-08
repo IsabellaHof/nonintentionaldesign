@@ -8,11 +8,13 @@ import NavigationBarHome from '../NavigationBarHome'
 const StyledImageContainer = styled.div`
   margin-top: 20px;
 `
-const Image = styled.img`
+const Image = styled.div`
   margin-bottom: 25px;
-  height: auto;
-  width: 100%;
-  background-image: ${props => `url(/image/${props.src})`};
+  /* height: auto; */
+  width: auto;
+  height: 600px;
+  background-image: ${props => `url(${props.src})`};
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 `
