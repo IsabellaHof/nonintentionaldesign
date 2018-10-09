@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-
+require('dotenv').config()
 const finds = require('./routes/api/finds.js')
 
 app.use(function(req, res, next) {
@@ -23,7 +23,7 @@ app.use('/api/finds', finds)
 
 mongoose
   .connect(
-    'mongodb://ihof:nid1983@ds161700.mlab.com:61700/nonintentionaldesign',
+    process.env.MONGO_DB,
     { useNewUrlParser: true }
   )
   .then(() => console.log('connected'))

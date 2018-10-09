@@ -1,12 +1,13 @@
 import { connect } from 'react-redux'
 import FilterScreen from '../components/screen/FilterScreen.js'
-import { fetchFinds } from '../actions'
+import { fetchFinds, imageSelected } from '../actions'
 
 const mapStateToProps = state => ({
   finds: state.finds,
 })
 
 const mapDispatchToProps = dispatch => ({
+  onImageClick: index => dispatch(imageSelected({ index })),
   fetchFinds: () => dispatch(fetchFinds()),
 })
 
