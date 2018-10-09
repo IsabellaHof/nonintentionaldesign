@@ -20,7 +20,7 @@ const NidStyled = styled.text`
 `
 const UploadInputBoxContainer = styled.div`
   background-color: #fc4955;
-  margin: 20px 0 0 -33px;
+  margin: 20px 0px 0 -33px;
   padding: 0 33px 20px 33px;
   width: 100%;
 `
@@ -31,7 +31,7 @@ const CommentInputStyled = styled.input`
   height: 20px;
   padding: 10px;
   outline: none;
-  width: 96%;
+  width: 92%;
   margin-top: -7px;
   color: #ffffff;
   font-family: 'Lora';
@@ -48,7 +48,7 @@ const CommentInputStoryStyled = styled.textarea`
   height: 15px;
   padding: 10px;
   outline: none;
-  width: 96%;
+  width: 92%;
   margin-top: -7px;
   color: #ffffff;
   font-family: 'Lora';
@@ -122,7 +122,7 @@ export default class UploadDetailScreen extends Component {
 
     return (
       <React.Fragment>
-        <UploadDetailScreenHeader />
+        <UploadDetailScreenHeader style={{ position: 'absoulte' }} />
         <TextStyled>
           Upload your <NidStyled>nid:</NidStyled>
         </TextStyled>
@@ -139,7 +139,7 @@ export default class UploadDetailScreen extends Component {
             style={{
               gridTemplateColumns: '1fr 1fr',
               display: 'grid',
-              width: '98%',
+              width: '95.75%',
             }}
           >
             <CommentInputStyled

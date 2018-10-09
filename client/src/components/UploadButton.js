@@ -8,8 +8,6 @@ const Container = styled.div`
   display: flex;
 `
 const UploadBox = styled.div`
-  /* display: flex; */
-  /* align-content: center; */
   border: 6px solid #ffffff;
   color: #ffffff;
   cursor: pointer;
@@ -20,16 +18,11 @@ const UploadBox = styled.div`
   justify-content: center;
   margin-bottom: 25px;
   width: 209px;
-
-  &:hover {
-    background: #ffffff;
-    color: #fc4955;
-  }
 `
 const Plus = styled.a`
   display: flex;
   position: relative;
-  left: -120px;
+  left: -110px;
   align-content: center;
   justify-content: center;
 `
@@ -37,6 +30,10 @@ const Plus = styled.a`
 const UploadBoxInput = styled.input`
   cursor: pointer;
   opacity: 0;
+  width: 209px;
+  height: 209px;
+  position: relative;
+  left: 40px;
 `
 
 export default class UploadButton extends Component {
