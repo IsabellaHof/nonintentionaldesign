@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import UploadDetailScreenHeader from '../UploadDetailScreenHeader'
 import NavigationBarUpload from '../NavigationBarUpload'
 import styled from 'styled-components'
+import Images from '../Images.js'
+import UploadButton from '../UploadButton.js'
+import Spinner from '../Spinner.js'
 
 const TextStyled = styled.div`
   color: #000000;
@@ -20,27 +23,6 @@ const UploadInputBoxContainer = styled.div`
   margin: 20px 0 0 -33px;
   padding: 0 33px 20px 33px;
   width: 100%;
-`
-const Container = styled.div`
-  padding: 25px 0 25px 0;
-`
-const UploadBox = styled.div`
-  align-content: center;
-  border: 6px solid #ffffff;
-  color: #ffffff;
-  cursor: pointer;
-  display: flex;
-  font-size: 140px;
-  font-weight: 300;
-  height: 209px;
-  justify-content: center;
-  margin-bottom: 25px;
-  width: 209px;
-
-  &:hover {
-    background: #ffffff;
-    color: #fc4955;
-  }
 `
 
 const CommentInputStyled = styled.input`
@@ -90,7 +72,54 @@ const PostButtonStyled = styled.div`
 `
 
 export default class UploadDetailScreen extends Component {
+  state = {
+    uploading: false,
+    images: [],
+  }
+
+  onChange = e => {
+    const files = Array.from(e.target.files)
+    this.setState({ uploading: true })
+
+    const formData = new FormData()
+
+    files.forEach((file, i) => {
+      formData.append(i, file)
+    })
+
+    fetch('http://localhost:5000/api/finds/image-upload', {
+      method: 'POST',
+      body: formData,
+    })
+      .then(res => res.json())
+      .then(newImages => {
+        this.setState({
+          uploading: false,
+          images: [...this.state.images, ...newImages],
+        })
+      })
+  }
+
+  removeImage = id => {
+    this.setState({
+      images: this.state.images.filter(image => image.public_id !== id),
+    })
+  }
+
   render() {
+    const { uploading, images } = this.state
+
+    const content = () => {
+      switch (true) {
+      case uploading:
+        return <Spinner />
+      case images.length > 0:
+        return <Images images={images} removeImage={this.removeImage} />
+      default:
+        return <UploadButton onChange={this.onChange} />
+      }
+    }
+
     return (
       <React.Fragment>
         <UploadDetailScreenHeader />
@@ -98,9 +127,7 @@ export default class UploadDetailScreen extends Component {
           Upload your <NidStyled>nid:</NidStyled>
         </TextStyled>
         <UploadInputBoxContainer>
-          <Container>
-            <UploadBox>+</UploadBox>
-          </Container>
+          <div>{content()}</div>
           <CommentInputStyled type="text" placeholder="Title ..." autoFocus />
           <CommentInputStoryStyled
             style={{ height: '200px' }}

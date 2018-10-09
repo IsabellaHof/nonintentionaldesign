@@ -4,6 +4,23 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 require('dotenv').config()
 const finds = require('./routes/api/finds.js')
+const cloudinary = require('cloudinary')
+const cors = require('cors')
+const formData = require('express-form-data')
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+})
+
+app.use(
+  cors({
+    origin: process.env.CLIENT_ORIGIN,
+  })
+)
+
+app.use(formData.parse())
 
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*')

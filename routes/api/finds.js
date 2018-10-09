@@ -1,6 +1,14 @@
 const express = require('express')
 const router = express.Router()
 const Find = require('../../models/Find.js')
+const cloudinary = require('cloudinary')
+
+router.post('/image-upload', (req, res) => {
+  const values = Object.values(req.files)
+  const promises = values.map(image => cloudinary.uploader.upload(image.path))
+
+  Promise.all(promises).then(results => res.json(results))
+})
 
 router.post('/', (req, res) => {
   const newFind = {
