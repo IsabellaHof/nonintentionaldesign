@@ -134,6 +134,7 @@ export default class FilterScreen extends Component {
 
       for (i = 0; i < finds.length; i++) {
         let material = finds[i].findMaterial
+        console.log(finds[i].findMaterial)
         if (!materials.includes(material)) {
           materials = [...materials, material]
         }

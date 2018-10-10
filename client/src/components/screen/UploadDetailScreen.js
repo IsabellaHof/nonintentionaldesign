@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Images from '../Images.js'
 import UploadButton from '../UploadButton.js'
 import Spinner from '../Spinner.js'
+import CreateNewFind from '../CreateNewFind'
 
 const TextStyled = styled.div`
   color: #000000;
@@ -25,40 +26,40 @@ const UploadInputBoxContainer = styled.div`
   width: 100%;
 `
 
-const CommentInputStyled = styled.input`
-  background: #fc4955;
-  border: 3px solid #ffffff;
-  height: 20px;
-  padding: 10px;
-  outline: none;
-  width: 92%;
-  margin-top: -7px;
-  color: #ffffff;
-  font-family: 'Lora';
-  font-weight: 700;
-  &::-webkit-input-placeholder {
-    color: #ffffff;
-    font-family: 'Roboto Mono';
-    font-weight: 700;
-  }
-`
-const CommentInputStoryStyled = styled.textarea`
-  background: #fc4955;
-  border: 3px solid #ffffff;
-  height: 15px;
-  padding: 10px;
-  outline: none;
-  width: 92%;
-  margin-top: -7px;
-  color: #ffffff;
-  font-family: 'Lora';
-  font-weight: 700;
-  &::-webkit-input-placeholder {
-    color: #ffffff;
-    font-family: 'Roboto Mono';
-    font-weight: 700;
-  }
-`
+// const CommentInputStyled = styled.input`
+//   background: #fc4955;
+//   border: 3px solid #ffffff;
+//   height: 20px;
+//   padding: 10px;
+//   outline: none;
+//   width: 92%;
+//   margin-top: -7px;
+//   color: #ffffff;
+//   font-family: 'Lora';
+//   font-weight: 700;
+//   &::-webkit-input-placeholder {
+//     color: #ffffff;
+//     font-family: 'Roboto Mono';
+//     font-weight: 700;
+//   }
+// `
+// const CommentInputStoryStyled = styled.textarea`
+//   background: #fc4955;
+//   border: 3px solid #ffffff;
+//   height: 15px;
+//   padding: 10px;
+//   outline: none;
+//   width: 92%;
+//   margin-top: -7px;
+//   color: #ffffff;
+//   font-family: 'Lora';
+//   font-weight: 700;
+//   &::-webkit-input-placeholder {
+//     color: #ffffff;
+//     font-family: 'Roboto Mono';
+//     font-weight: 700;
+//   }
+// `
 const PostButtonStyled = styled.div`
   background-color: #fc4955;
   color: white;
@@ -128,49 +129,7 @@ export default class UploadDetailScreen extends Component {
         </TextStyled>
         <UploadInputBoxContainer>
           <div>{content()}</div>
-          <CommentInputStyled type="text" placeholder="Title ..." autoFocus />
-          <CommentInputStoryStyled
-            style={{ height: '200px' }}
-            type="text"
-            placeholder="Your Story ..."
-            autoFocus
-          />
-          <div
-            style={{
-              gridTemplateColumns: '1fr 1fr',
-              display: 'grid',
-              width: '95.75%',
-            }}
-          >
-            <CommentInputStyled
-              type="text"
-              placeholder="Country ..."
-              autoFocus
-            />
-            <CommentInputStyled type="text" placeholder="City ..." autoFocus />
-          </div>
-          <CommentInputStyled
-            type="text"
-            placeholder="Material ..."
-            autoFocus
-          />
-
-          <div
-            style={{
-              marginTop: '50px',
-            }}
-          >
-            <CommentInputStyled
-              type="text"
-              placeholder="Your Name ..."
-              autoFocus
-            />
-            <CommentInputStyled
-              type="text"
-              placeholder="Your E-Mail ..."
-              autoFocus
-            />
-          </div>
+          <CreateNewFind />
         </UploadInputBoxContainer>
         <PostButtonStyled>Post</PostButtonStyled>
         <NavigationBarUpload />

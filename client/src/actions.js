@@ -6,6 +6,7 @@ const ACTIONS = {
   ON_DELETE_COMMENT: 'ON_DELETE_COMMENT',
   RECEIVE_FINDS: 'RECEIVE_FINDS',
   RECEIVE_SINGLE_FIND: 'RECEIVE_SINGLE_FIND',
+  // CREATE_NEW_FIND: 'CREATE_NEW_FIND',
 }
 
 export const imageSelected = createAction(ACTIONS.IMAGE_SELECTED)
@@ -13,6 +14,7 @@ export const addComment = createAction(ACTIONS.ADD_COMMENT)
 export const onDeleteComment = createAction(ACTIONS.ON_DELETE_COMMENT)
 export const receiveFinds = createAction(ACTIONS.RECEIVE_FINDS)
 export const receiveSingleFind = createAction(ACTIONS.RECEIVE_SINGLE_FIND)
+// export const createNewFind = createAction(ACTIONS.CREATE_NEW_FIND)
 
 export const fetchFinds = () => dispatch => {
   fetch('http://localhost:5000/api/finds/getAll')
@@ -28,6 +30,20 @@ export const fetchSingleFind = id => dispatch => {
     .then(find => {
       dispatch(receiveSingleFind({ find }))
     })
+}
+
+export const createNewFind = findData => {
+  console.log(findData + 'fromActions.js')
+  fetch('http://localhost:5000/api/finds', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'appliction/json',
+    },
+    body: findData,
+  })
+    .then(res => res.json())
+    .then(data => console.log(data))
 }
 
 export default ACTIONS

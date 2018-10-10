@@ -2,31 +2,31 @@ const mongoose = require('mongoose')
 const FindSchema = new mongoose.Schema({
   image: {
     type: String,
-    required: true,
+    // required: true,
   },
   findName: {
     type: String,
-    required: true,
+    // required: true,
   },
   findDescription: {
     type: String,
-    required: true,
+    // required: true,
   },
   findPerson: {
     type: String,
-    required: true,
+    // required: true,
   },
   findCountry: {
     type: String,
-    required: true,
+    // required: true,
   },
   findCity: {
     type: String,
-    required: true,
+    // required: true,
   },
   findMaterial: {
     type: Array,
-    required: true,
+    // required: true,
   },
   comments: {
     type: Array,

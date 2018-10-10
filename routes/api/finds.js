@@ -11,17 +11,18 @@ router.post('/image-upload', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const newFind = {
-    image: req.body.image,
-    findName: req.body.findName,
-    findDescription: req.body.findDescription,
-    findPerson: req.body.findPerson,
-    findCountry: req.body.findCountry,
-    findCity: req.body.findCity,
-    findMaterial: req.body.findMaterial,
-    comments: req.body.comments,
-  }
-  Find.create(newFind)
+  // const newFind = {
+  //   image: req.body.image,
+  //   findName: req.body.findName,
+  //   findDescription: req.body.findDescription,
+  //   findPerson: req.body.findPerson,
+  //   findCountry: req.body.findCountry,
+  //   findCity: req.body.findCity,
+  //   findMaterial: req.body.findMaterial,
+  //   comments: req.body.comments,
+  // }
+  console.log(req.body)
+  Find.create(req.body)
     .then(data => res.json(data))
     .catch(err => console.log(err))
 })
