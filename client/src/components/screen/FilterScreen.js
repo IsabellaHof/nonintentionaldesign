@@ -97,6 +97,7 @@ export default class FilterScreen extends Component {
       return this.state.imageURLs.map((image, index) => {
         return (
           <Link to={`/finds/${image._id}`} key={index}>
+            {' '}
             <Image
               key={index}
               src={image}

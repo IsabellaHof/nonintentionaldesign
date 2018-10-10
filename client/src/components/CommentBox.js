@@ -72,7 +72,7 @@ const DeleteButtonStyled = styled.a`
   }
 `
 const Space = styled.div`
-  margin-bottom: 150px;
+  margin-bottom: 180px;
 `
 
 export default class CommentBox extends Component {

@@ -4,19 +4,20 @@ import DetailScreenHeader from '../DetailScreenHeader'
 import CommentBoxContainer from '../../containers/CommentBoxContainer.js'
 import styled from 'styled-components'
 import NavigationBarHome from '../NavigationBarHome'
+import ScrollToTop from '../ScrollToTop'
 
 const StyledImageContainer = styled.div`
-  margin-top: 20px;
+  margin-top: 40px;
 `
 const Image = styled.div`
   margin-bottom: 25px;
-  /* height: auto; */
   width: auto;
-  height: 600px;
+  height: 500px;
   background-image: ${props => `url(${props.src})`};
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: 110%;
 `
 const HeadlineDetailStyled = styled.div`
   font-style: italic;
@@ -35,17 +36,17 @@ const DiscoverDetailStyled = styled.div`
   margin: 15px 0 30px 0;
 `
 const TagStyled = styled.div`
-  color: #fc4955;
-  border: 2px solid #fc4955;
+  background-color: #fc4955;
+  color: #ffffff;
   display: inline-block;
   font-size: 14px;
   margin: 6px 6px 20px 0;
   padding: 6px;
 
-  &:hover {
-    background-color: #fc4955;
-    color: white;
-  }
+  /* &:hover {
+    border: 2px solid #fc4955;
+    color: #fc4955;
+  } */
 `
 const TagMainPointStyled = styled.a`
   color: #000000;
@@ -66,6 +67,7 @@ export default class DetailScreen extends Component {
     match: PropTypes.any,
     find: PropTypes.any,
     comments: PropTypes.any,
+    onImageClick: PropTypes.func.isRequired,
   }
 
   renderTags() {
@@ -96,16 +98,18 @@ export default class DetailScreen extends Component {
           <StyledImageContainer>
             <Image src={image} alt="" />
           </StyledImageContainer>
-          <HeadlineDetailStyled>{findName}</HeadlineDetailStyled>
-          <TextDetailStyled>{findDescription}</TextDetailStyled>
-          <DiscoverDetailStyled>
-            discovered by {findPerson} in {findCity}, {findCountry}
-          </DiscoverDetailStyled>
-          <TagMainPointStyled>
-            Material <div>{this.renderTags()}</div>
-          </TagMainPointStyled>
-          <hr />
-          <CommentBoxContainer />
+          <ScrollToTop>
+            <HeadlineDetailStyled>{findName}</HeadlineDetailStyled>
+            <TextDetailStyled>{findDescription}</TextDetailStyled>
+            <DiscoverDetailStyled>
+              discovered by {findPerson} in {findCity}, {findCountry}
+            </DiscoverDetailStyled>
+            <TagMainPointStyled>
+              Material <div>{this.renderTags()}</div>
+            </TagMainPointStyled>
+            <hr />
+            <CommentBoxContainer />
+          </ScrollToTop>
           <NavigationBarHome />
         </React.Fragment>
       )

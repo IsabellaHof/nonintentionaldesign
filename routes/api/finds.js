@@ -39,6 +39,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
+  // cloudinary.delete()
   Find.findByIdAndRemove(req.params.id)
     .then(data => res.json(data))
     .catch(err => console.log(err))
