@@ -8,7 +8,7 @@ const SpinnerStyled = styled.div`
   &::after {
     content: '';
     position: fixed;
-    border: 2px solid white;
+    border: 3px solid white;
     width: 30px;
     height: 30px;
   }
