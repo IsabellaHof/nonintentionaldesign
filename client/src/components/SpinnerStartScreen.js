@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const SpinnerStyled = styled.div`
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
+
   &::before,
   &::after {
     content: '';
@@ -31,13 +32,6 @@ const SpinnerStyled = styled.div`
     100% {
       transform: rotate(360deg);
     }
-  }
-
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 `
 const SpinnerStyledContainer = styled.div`

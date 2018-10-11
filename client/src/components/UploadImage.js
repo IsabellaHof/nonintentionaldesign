@@ -31,6 +31,7 @@ export default class UploadImage extends Component {
           uploading: false,
           images: [...this.state.images, ...newImages],
         })
+        this.props.onDone(newImages[0].secure_url)
       })
   }
   render() {

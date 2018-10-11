@@ -8,6 +8,7 @@ import DetailScreenContainer from '../containers/DetailScreenContainer'
 import InfoScreen from './screen/InfoScreen'
 import UploadScreenContainer from '../containers/UploadScreenContainer'
 import UploadDetailScreen from './screen/UploadDetailScreen'
+import StartAnimation from './screen/StartAnimation'
 import FilterScreenContainer from '../containers/FilterScreenContainer'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import thunk from 'redux-thunk'
@@ -31,6 +32,7 @@ class App extends Component {
             <Route path="/filter" component={FilterScreenContainer} />
             <Route path="/upload" component={UploadScreenContainer} />
             <Route path="/uploaddetail" component={UploadDetailScreen} />
+            <Route path="/animation" component={StartAnimation} />
           </div>
         </Provider>
       </Router>

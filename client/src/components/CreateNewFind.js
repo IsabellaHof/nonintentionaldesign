@@ -93,12 +93,14 @@ class CreateNewFind extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  onNewImageUploaded = image => this.setState({ image })
+
   render() {
     return (
       <React.Fragment>
         <form onSubmit={this.onSubmit}>
           <UploadInputBoxContainer>
-            <UploadImage />
+            <UploadImage onDone={this.onNewImageUploaded} />
             <CommentInputStyled
               type="text"
               placeholder="Title * ..."
