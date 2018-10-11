@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { createNewFind } from '../actions'
+import UploadImage from './UploadImage'
 
 const UploadInputBoxContainer = styled.div`
   background-color: #fc4955;
@@ -46,15 +47,17 @@ const CommentInputStoryStyled = styled.textarea`
   }
 `
 const PostButtonStyled = styled.button`
-  background-color: #fc4955;
-  color: white;
+  background-color: #ffffff;
+  color: #fc4955;
   cursor: pointer;
   display: inline-block;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   margin: 20px 0 80px 0;
   padding: 6px;
   outline: none;
+  border: none;
+  font-weight: 700;
 `
 
 class CreateNewFind extends Component {
@@ -69,6 +72,7 @@ class CreateNewFind extends Component {
     findPerson: '',
     findCity: '',
     findMaterial: '',
+    findMail: '',
   }
 
   onSubmit = e => {
@@ -94,12 +98,13 @@ class CreateNewFind extends Component {
       <React.Fragment>
         <form onSubmit={this.onSubmit}>
           <UploadInputBoxContainer>
+            <UploadImage />
             <CommentInputStyled
               type="text"
-              placeholder="Title ..."
+              placeholder="Title * ..."
               autoFocus
-              onChange={this.onChange}
               name="findName"
+              onChange={this.onChange}
               value={this.state.findName}
             />
             <CommentInputStoryStyled
@@ -120,7 +125,7 @@ class CreateNewFind extends Component {
             >
               <CommentInputStyled
                 type="text"
-                placeholder="Country ..."
+                placeholder="Country * ..."
                 autoFocus
                 name="findCountry"
                 onChange={this.onChange}
@@ -128,8 +133,11 @@ class CreateNewFind extends Component {
               />
               <CommentInputStyled
                 type="text"
-                placeholder="City ..."
+                placeholder="City * ..."
                 autoFocus
+                name="findCity"
+                onChange={this.onChange}
+                value={this.state.findCity}
               />
             </div>
             <CommentInputStyled
@@ -143,18 +151,24 @@ class CreateNewFind extends Component {
 
             <div
               style={{
-                marginTop: '50px',
+                marginTop: '40px',
               }}
             >
               <CommentInputStyled
                 type="text"
-                placeholder="Your Name ..."
+                placeholder="Your Name * ..."
                 autoFocus
+                name="findPerson"
+                onChange={this.onChange}
+                value={this.state.findPerson}
               />
               <CommentInputStyled
                 type="text"
-                placeholder="Your E-Mail ..."
+                placeholder="Your E-Mail * ..."
                 autoFocus
+                name="findMail"
+                onChange={this.onChange}
+                value={this.state.findMail}
               />
             </div>
           </UploadInputBoxContainer>

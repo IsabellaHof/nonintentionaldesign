@@ -28,6 +28,12 @@ const FindSchema = new mongoose.Schema({
     type: Array,
     // required: true,
   },
+
+  findMail: {
+    type: String,
+    required: false,
+  },
+
   comments: {
     type: Array,
     required: false,
@@ -38,4 +44,4 @@ const FindSchema = new mongoose.Schema({
   },
 })
 
-module.exports = Find = mongoose.model('find', FindSchema)
+module.exports = mongoose.model('Find', FindSchema)

@@ -6,7 +6,7 @@ const cloudinary = require('cloudinary')
 router.post('/image-upload', (req, res) => {
   const values = Object.values(req.files)
   const promises = values.map(image => cloudinary.uploader.upload(image.path))
-
+  console.log('image upload')
   Promise.all(promises).then(results => res.json(results))
 })
 
@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
   //   findMaterial: req.body.findMaterial,
   //   comments: req.body.comments,
   // }
-  console.log(req.body)
+  console.log('body', req.body)
   Find.create(req.body)
     .then(data => res.json(data))
     .catch(err => console.log(err))
