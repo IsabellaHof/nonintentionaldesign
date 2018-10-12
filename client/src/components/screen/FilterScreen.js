@@ -31,83 +31,50 @@ const ImageScreenContainer = styled.div`
   columns: 2;
 `
 const Image = styled.img`
-  margin-bottom: 25px;
   height: auto;
+  margin-bottom: 25px;
   width: 100%;
 `
 
 export default class FilterScreen extends Component {
-  state = {}
+  state = {
+    finds: [],
+  }
 
   componentDidMount() {
     this.props.fetchFinds()
   }
 
   static propTypes = {
+    fetchFinds: PropTypes.func.isRequired,
     finds: PropTypes.arrayOf(PropTypes.object),
     onImageClick: PropTypes.func.isRequired,
-    fetchFinds: PropTypes.func.isRequired,
   }
 
   checkForCountry = country => {
     const { finds } = this.props
-    let i
-    let urls = []
-
-    for (i = 0; i < finds.length; i++) {
-      if (finds[i].findCountry === country) {
-        let url = finds[i].image
-        urls = [...urls, url]
-      }
-    }
-    this.setState({ imageURLs: urls })
+    this.setState({ finds: finds.filter(find => find.findCountry === country) })
   }
 
   checkForCity = city => {
     const { finds } = this.props
-    let i
-    let urls = []
-
-    for (i = 0; i < finds.length; i++) {
-      if (finds[i].findCity === city) {
-        let url = finds[i].image
-        urls = [...urls, url]
-      }
-    }
-    this.setState({ imageURLs: urls })
-  }
-
-  checkForMaterial = material => {
-    const { finds } = this.props
-    let i
-    let urls = {}
-
-    for (i = 0; i < finds.length; i++) {
-      if (finds[i].findMaterial === material) {
-        let url = finds[i].image
-        urls = [...urls, url]
-      }
-    }
-    this.setState({ imageURLs: urls })
+    this.setState({ finds: finds.filter(find => find.findCity === city) })
   }
 
   renderImages() {
     const { onImageClick } = this.props
-    if (this.state.imageURLs) {
-      return this.state.imageURLs.map((image, index) => {
-        return (
-          <Link to={`/finds/${image._id}`} key={index}>
-            {' '}
-            <Image
-              key={index}
-              src={image}
-              alt=""
-              onClick={() => onImageClick(index)}
-            />
-          </Link>
-        )
-      })
-    }
+    return this.state.finds.map((find, index) => {
+      return (
+        <Link to={`/finds/${find._id}`} key={index}>
+          <Image
+            key={index}
+            src={find.image}
+            alt=""
+            onClick={() => onImageClick(index)}
+          />
+        </Link>
+      )
+    })
   }
 
   render() {
@@ -116,7 +83,6 @@ export default class FilterScreen extends Component {
       let i
       let countries = []
       let cities = []
-      let materials = []
 
       for (i = 0; i < finds.length; i++) {
         let country = finds[i].findCountry
@@ -129,14 +95,6 @@ export default class FilterScreen extends Component {
         let city = finds[i].findCity
         if (!cities.includes(city)) {
           cities = [...cities, city]
-        }
-      }
-
-      for (i = 0; i < finds.length; i++) {
-        let material = finds[i].findMaterial
-        console.log(finds[i].findMaterial)
-        if (!materials.includes(material)) {
-          materials = [...materials, material]
         }
       }
 
@@ -175,27 +133,9 @@ export default class FilterScreen extends Component {
                 })}
               </div>
             </section>
-
-            <section style={{ margin: '20px 0 20px 0' }}>
-              <TagMainPointStyled>Material</TagMainPointStyled>
-              <div>
-                {materials.map((material, index) => {
-                  return (
-                    <TagStyled
-                      key={index}
-                      onClick={() => this.checkForMaterial(material)}
-                    >
-                      {material}
-                    </TagStyled>
-                  )
-                })}
-              </div>
-            </section>
           </FilterContainer>
           <hr />
-
           <ImageScreenContainer>{this.renderImages()}</ImageScreenContainer>
-
           <NavigationBarFilter />
         </React.Fragment>
       )

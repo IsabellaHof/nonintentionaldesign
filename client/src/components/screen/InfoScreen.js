@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import logo_big from '../../img/logo_big.svg'
 import arrow_right from '../../img/arrow_right.svg'
+import StartAnimation from './StartAnimation'
 
 const InfoScreenContainer = styled.div`
   align-content: center;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
 `
 const InfoScreenImage = styled.div`
   display: flex;
@@ -18,19 +19,19 @@ const InfoScreenImage = styled.div`
 const InfoScreenHeadline = styled.div`
   font-size: 48px;
   font-style: italic;
-  margin-top: 60px;
+  margin-top: 40px;
 `
 const InfoScreenRunningText = styled.div`
   color: #000000;
   font-family: 'Loro';
-  font-size: 38px;
+  font-size: 34px;
   margin: 10px 0 60px 0;
 `
 const ImprintStyled = styled.div`
+  cursor: pointer;
   font-size: 14px;
   font-weight: 400;
   margin-top: 10px;
-  cursor: pointer;
 `
 
 export default class InfoScreen extends Component {
@@ -44,6 +45,7 @@ export default class InfoScreen extends Component {
       hiddenImprint: !this.state.hiddenImprint,
     })
   }
+
   toggleContentDataProtection = () => {
     this.setState({
       hiddenDataProtection: !this.state.hiddenDataProtection,
@@ -73,6 +75,9 @@ export default class InfoScreen extends Component {
           22303 Hamburg <br />
           Germany <br />
           <br />
+          <strong>Thanks a lot to</strong> <br />
+          neue Fische: Axel, Hans, Jen, Jerry, Johanna, Jojo, Lena, Lionel, Tom
+          <br /> <br />
           (in German) <br />
           <strong>Haftungshinweis</strong> <br />
           Die Inhalte dieser Seite wurde mit größter Sorgfalt erstellt. Für die
@@ -142,7 +147,11 @@ export default class InfoScreen extends Component {
   render() {
     return (
       <React.Fragment>
-        <InfoScreenContainer data-test-id="InfoScreen">
+        <InfoScreenContainer
+          data-test-id="InfoScreen"
+          style={{ position: 'relative' }}
+        >
+          <StartAnimation />
           <InfoScreenImage>
             <img src={logo_big} alt="Big Logo" />
           </InfoScreenImage>

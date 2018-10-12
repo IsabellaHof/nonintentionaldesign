@@ -10,14 +10,16 @@ const StyledImageContainer = styled.div`
   margin-top: 40px;
 `
 const Image = styled.div`
-  margin-bottom: 25px;
-  width: auto;
-  height: 500px;
+  background-attachment: fixed;
   background-image: ${props => `url(${props.src})`};
   background-position: center top;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: 110%;
+  height: 100%;
+  margin-bottom: 25px;
+  overflow: hidden;
+  padding-top: calc(300 / 200 * 100%);
+  width: 100%;
 `
 const HeadlineDetailStyled = styled.div`
   font-style: italic;
@@ -42,11 +44,6 @@ const TagStyled = styled.div`
   font-size: 14px;
   margin: 6px 6px 20px 0;
   padding: 6px;
-
-  /* &:hover {
-    border: 2px solid #fc4955;
-    color: #fc4955;
-  } */
 `
 const TagMainPointStyled = styled.a`
   color: #000000;
@@ -60,18 +57,16 @@ export default class DetailScreen extends Component {
   }
 
   static propTypes = {
-    state: PropTypes.arrayOf(PropTypes.object),
+    comments: PropTypes.any,
+    find: PropTypes.any,
     finds: PropTypes.arrayOf(PropTypes.object),
-    selectedIndex: PropTypes.number,
     fetchSingleFind: PropTypes.func,
     match: PropTypes.any,
-    find: PropTypes.any,
-    comments: PropTypes.any,
-    onImageClick: PropTypes.func.isRequired,
+    selectedIndex: PropTypes.number,
+    state: PropTypes.arrayOf(PropTypes.object),
   }
 
   renderTags() {
-    // const { selectedIndex } = this.props
     return this.props.find[0].findMaterial.map((tag, index) => {
       return (
         <TagStyled key={index} text={tag}>

@@ -32,8 +32,10 @@ const CommentInputStyled = styled.textarea`
   color: #fc4955;
   font-family: 'Lora';
   font-weight: 700;
+  font-size: 16px;
   &::-webkit-input-placeholder {
     color: #fc4955;
+    font-size: 12px;
     font-family: 'Roboto Mono';
     font-weight: 700;
   }
@@ -69,6 +71,7 @@ const DeleteButtonStyled = styled.a`
     cursor: pointer;
     font-size: 14px;
     opacity: 1;
+    color: #fc4955;
   }
 `
 const Space = styled.div`
@@ -156,7 +159,7 @@ export default class CommentBox extends Component {
   }
 
   renderLongOrShortComment() {
-    const { comments } = this.props.comments[0]
+    const { comments } = this.props
 
     return this.state.hiddenComment ? (
       <CommentShowHeadlineStyled onClick={this.toggleComment}>
@@ -184,14 +187,14 @@ export default class CommentBox extends Component {
   }
 
   renderComments() {
-    const { comments, onDeleteComment } = this.props.comments[0]
+    const { comments, onDeleteComment } = this.props
 
     return (
       <div>
         {comments.map((comment, index) => {
           return (
             <div key={index}>
-              {comment}
+              {comment.text}
               <DeleteButtonStyled onClick={() => onDeleteComment(index)}>
                 &times;
               </DeleteButtonStyled>

@@ -22,7 +22,6 @@ const ArrangementContainer = styled.div`
   justify-content: space-around;
   margin-top: 45px;
 `
-
 const Image = styled.img`
   height: auto;
   margin-bottom: 25px;
@@ -35,9 +34,9 @@ export default class ImageScreen extends Component {
   }
 
   static propTypes = {
+    fetchFinds: PropTypes.func.isRequired,
     finds: PropTypes.arrayOf(PropTypes.object),
     onImageClick: PropTypes.func.isRequired,
-    fetchFinds: PropTypes.func.isRequired,
   }
 
   state = {

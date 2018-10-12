@@ -3,14 +3,21 @@ import Images from './Images.js'
 import UploadButton from './UploadButton.js'
 import Spinner from './Spinner.js'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const UploadImageStyled = styled.div``
 
 export default class UploadImage extends Component {
+  static propTypes = {
+    onDone: PropTypes.func,
+    removeImage: PropTypes.func,
+  }
+
   state = {
     uploading: false,
     images: [],
   }
+
   onChange = e => {
     const files = Array.from(e.target.files)
     this.setState({ uploading: true })
@@ -34,6 +41,7 @@ export default class UploadImage extends Component {
         this.props.onDone(newImages[0].secure_url)
       })
   }
+
   render() {
     const { uploading, images } = this.state
 

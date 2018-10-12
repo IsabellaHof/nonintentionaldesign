@@ -31,7 +31,6 @@ export const fetchSingleFind = id => dispatch => {
 }
 
 export const createNewFind = findData => () => {
-  // console.log(findData, 'fromActions.js')
   fetch('http://localhost:5000/api/finds', {
     method: 'POST',
     headers: {

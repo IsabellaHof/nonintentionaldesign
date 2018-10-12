@@ -1,11 +1,9 @@
 import ACTIONS from './actions'
-// import finds from './data/finds.js'
 import { load } from './services.js'
 
 const initialState = load('app') || {
-  // finds: finds,
   selectedIndex: null,
-  // comments: [],
+  comments: [],
 }
 
 export default function reducer(state = initialState, action = {}) {

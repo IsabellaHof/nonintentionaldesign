@@ -15,7 +15,9 @@ const ImageDeleteButton = styled.div`
 export default props =>
   props.images.map((image, i) => (
     <div key={i}>
-      <ImageDeleteButton onClick={() => props.removeImage(image.public_id)}>
+      <ImageDeleteButton
+        onClick={() => this.props.removeImage(image.public_id)}
+      >
         <img src={closeButton_white} alt="Logo" />
       </ImageDeleteButton>
 

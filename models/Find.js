@@ -33,11 +33,10 @@ const FindSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-
-  comments: {
-    type: Array,
-    required: false,
-  },
+  // comments: {
+  //   type: Array,
+  //   required: false,
+  // },
   date: {
     type: Date,
     default: Date.now,

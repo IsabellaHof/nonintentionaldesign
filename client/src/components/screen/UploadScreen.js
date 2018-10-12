@@ -15,14 +15,14 @@ const Image = styled.img`
   width: 100%;
 `
 const UploadBox = styled.div`
-  align-content: center;
+  align-items: center;
   border: 6px solid #fc4955;
   color: #fc4955;
   cursor: pointer;
   display: flex;
-  font-size: 140px;
+  font-size: 120px;
   font-weight: 300;
-  height: 100%;
+  height: 140px;
   justify-content: center;
   margin-bottom: 25px;
   width: auto;
@@ -54,7 +54,6 @@ export default class UploadScreen extends Component {
             <Link to={'/uploaddetail'} style={{ textDecoration: 'none' }}>
               <UploadBox>+</UploadBox>
             </Link>
-
             {finds.map((find, index) => {
               return (
                 <Link to={`/finds/${find._id}`} key={index}>

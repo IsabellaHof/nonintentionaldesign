@@ -13,6 +13,8 @@ injectGlobal`
   font-family: 'Roboto Mono';
   font-weight: 700;
   color: #fc4955;
+  /* height: 667px; 
+  width: 375px;  */
  }
 `
 

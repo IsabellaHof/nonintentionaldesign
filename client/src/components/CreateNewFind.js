@@ -23,7 +23,9 @@ const CommentInputStyled = styled.input`
   color: #ffffff;
   font-family: 'Lora';
   font-weight: 700;
+  font-size: 16px;
   &::-webkit-input-placeholder {
+    font-size: 12px;
     color: #ffffff;
     font-family: 'Roboto Mono';
     font-weight: 700;
@@ -40,7 +42,9 @@ const CommentInputStoryStyled = styled.textarea`
   color: #ffffff;
   font-family: 'Lora';
   font-weight: 700;
+  font-size: 16px;
   &::-webkit-input-placeholder {
+    font-size: 12px;
     color: #ffffff;
     font-family: 'Roboto Mono';
     font-weight: 700;
@@ -144,7 +148,7 @@ class CreateNewFind extends Component {
             </div>
             <CommentInputStyled
               type="text"
-              placeholder="Material ..."
+              placeholder="Material * ..."
               autoFocus
               name="findMaterial"
               onChange={this.onChange}
