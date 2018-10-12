@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DetailScreenHeader from '../DetailScreenHeader'
+import ImageScreenHeader from '../ImageScreenHeader'
 import NavigationBarUpload from '../NavigationBarUpload'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -49,7 +49,7 @@ export default class UploadScreen extends Component {
       const { onImageClick, finds } = this.props
       return (
         <React.Fragment>
-          <DetailScreenHeader />
+          <ImageScreenHeader />
           <ImageScreenContainer>
             <Link to={'/uploaddetail'} style={{ textDecoration: 'none' }}>
               <UploadBox>+</UploadBox>

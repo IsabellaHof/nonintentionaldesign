@@ -65,14 +65,17 @@ const CommentShowStyled = styled.div`
 `
 const DeleteButtonStyled = styled.a`
   margin-left: 2px;
-  opacity: 0;
+  opacity: 1;
+  color: #fc4955;
+  cursor: pointer;
+  font-size: 14px;
 
-  &:hover {
+  /* &:hover {
     cursor: pointer;
     font-size: 14px;
     opacity: 1;
     color: #fc4955;
-  }
+  } */
 `
 const Space = styled.div`
   margin-bottom: 180px;

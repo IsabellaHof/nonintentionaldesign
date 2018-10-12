@@ -80,23 +80,9 @@ export default class FilterScreen extends Component {
   render() {
     if (this.props.finds) {
       const { finds } = this.props
-      let i
-      let countries = []
-      let cities = []
 
-      for (i = 0; i < finds.length; i++) {
-        let country = finds[i].findCountry
-        if (!countries.includes(country)) {
-          countries = [...countries, country]
-        }
-      }
-
-      for (i = 0; i < finds.length; i++) {
-        let city = finds[i].findCity
-        if (!cities.includes(city)) {
-          cities = [...cities, city]
-        }
-      }
+      const countries = Array.from(new Set(finds.map(find => find.findCountry)))
+      const cities = Array.from(new Set(finds.map(find => find.findCity)))
 
       return (
         <React.Fragment>
@@ -107,12 +93,14 @@ export default class FilterScreen extends Component {
               <div>
                 {countries.map((country, index) => {
                   return (
-                    <TagStyled
-                      key={index}
-                      onClick={() => this.checkForCountry(country)}
-                    >
-                      {country}
-                    </TagStyled>
+                    country && (
+                      <TagStyled
+                        key={index}
+                        onClick={() => this.checkForCountry(country)}
+                      >
+                        {country}
+                      </TagStyled>
+                    )
                   )
                 })}
               </div>
@@ -123,12 +111,14 @@ export default class FilterScreen extends Component {
               <div>
                 {cities.map((city, index) => {
                   return (
-                    <TagStyled
-                      key={index}
-                      onClick={() => this.checkForCity(city)}
-                    >
-                      {city}
-                    </TagStyled>
+                    city && (
+                      <TagStyled
+                        key={index}
+                        onClick={() => this.checkForCity(city)}
+                      >
+                        {city}
+                      </TagStyled>
+                    )
                   )
                 })}
               </div>
