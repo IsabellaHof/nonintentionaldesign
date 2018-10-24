@@ -61,6 +61,13 @@ export default class FilterScreen extends Component {
     this.setState({ finds: finds.filter(find => find.findCity === city) })
   }
 
+  checkForMaterial = material => {
+    const { finds } = this.props
+    this.setState({
+      finds: finds.filter(find => find.findMaterial === material),
+    })
+  }
+
   renderImages() {
     const { onImageClick } = this.props
     return this.state.finds.map((find, index) => {
@@ -83,6 +90,9 @@ export default class FilterScreen extends Component {
 
       const countries = Array.from(new Set(finds.map(find => find.findCountry)))
       const cities = Array.from(new Set(finds.map(find => find.findCity)))
+      const materials = Array.from(
+        new Set(finds.map(find => find.findMaterial))
+      )
 
       return (
         <React.Fragment>
@@ -117,6 +127,23 @@ export default class FilterScreen extends Component {
                         onClick={() => this.checkForCity(city)}
                       >
                         {city}
+                      </TagStyled>
+                    )
+                  )
+                })}
+              </div>
+            </section>
+            <section style={{ marginTop: '20px' }}>
+              <TagMainPointStyled>Material</TagMainPointStyled>
+              <div>
+                {materials.map((material, index) => {
+                  return (
+                    material && (
+                      <TagStyled
+                        key={index}
+                        onClick={() => this.checkForMaterial(material)}
+                      >
+                        {material}
                       </TagStyled>
                     )
                   )
