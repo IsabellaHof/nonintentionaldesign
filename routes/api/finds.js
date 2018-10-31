@@ -7,7 +7,7 @@ router.post('/image-upload', (req, res) => {
   const values = Object.values(req.files)
   const promises = values.map(image => cloudinary.uploader.upload(image.path))
   console.log('image upload')
-  Promise.all(promises).then(results => res.json(results))
+  Promise.all(promises).then(results => res.json(results), err => res.status(500))
 })
 
 router.post('/', (req, res) => {

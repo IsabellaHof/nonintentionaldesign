@@ -64,7 +64,9 @@ export default class FilterScreen extends Component {
   checkForMaterial = material => {
     const { finds } = this.props
     this.setState({
-      finds: finds.filter(find => find.findMaterial === material),
+      finds: finds.filter(
+        find => find.findMaterial.find(find => find === material) != null
+      ),
     })
   }
 
@@ -91,7 +93,7 @@ export default class FilterScreen extends Component {
       const countries = Array.from(new Set(finds.map(find => find.findCountry)))
       const cities = Array.from(new Set(finds.map(find => find.findCity)))
       const materials = Array.from(
-        new Set(finds.map(find => find.findMaterial))
+        new Set(finds.flatMap(find => find.findMaterial))
       )
 
       return (

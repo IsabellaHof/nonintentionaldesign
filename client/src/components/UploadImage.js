@@ -14,6 +14,7 @@ export default class UploadImage extends Component {
   }
 
   state = {
+    uploadError: false,
     uploading: false,
     images: [],
   }
@@ -36,14 +37,18 @@ export default class UploadImage extends Component {
       .then(newImages => {
         this.setState({
           uploading: false,
+          uploadError: false,
           images: [...this.state.images, ...newImages],
         })
         this.props.onDone(newImages[0].secure_url)
       })
+      .catch(err => {
+        this.setState({ uploadError: true })
+      })
   }
 
   render() {
-    const { uploading, images } = this.state
+    const { uploading, images, uploadError } = this.state
 
     const content = () => {
       switch (true) {
@@ -51,6 +56,8 @@ export default class UploadImage extends Component {
         return <Spinner />
       case images.length > 0:
         return <Images images={images} removeImage={this.removeImage} />
+      case uploadError:
+        return <div>Error!</div>
       default:
         return <UploadButton onChange={this.onChange} />
       }
